@@ -1,0 +1,11 @@
+
+.menu {
+    width: 400px;
+    border-bottom: 3px solid;
+}
+
+.isActive {
+    border-color: #dc942d;
+    color: #ffffff;
+}
+
