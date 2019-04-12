@@ -1,11 +1,23 @@
 
 .menu {
     width: 400px;
-    border-bottom: 3px solid;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Sans Pro';
+    font-size: '36';
+    text-align: center;
 }
 
 .isActive {
     border-color: #dc942d;
     color: #ffffff;
+}
+
+.underline {
+    width: 300px;
+    border-bottom: 3px solid;
+    margin-top: auto;
+    border-color: inherit;
 }
 

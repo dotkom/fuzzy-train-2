@@ -1,15 +1,18 @@
 import React from 'react';
-import style from './MenuTab.css';
+import style from './MenuTab.css'
 import classNames from 'classnames';
 
 const MenuTab = ({isActive, children, handleOnclick}) => {
     return (
-        <button className={classNames({
+        <div className=/*{classNames({
             [style.menu]: true,
             [style.isActive]: isActive,
-        })}>
+        })}*/"isActive menu">
             {children}
-        </button>
+            <div className="underline">
+
+            </div>
+        </div>
     );
 };
 
