@@ -4,16 +4,14 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 :root {
-  --dark: #07244C;
-  --light: #ffffff;
+  --primary: #07244C;
 
-  @media (prefers-color-scheme: dark) {
-      --primary: var(--dark);
+  @media (prefers-color-scheme: light) {
+      --primary: #ffffff;
   }
 }
-
 body{
-  background-color: var(--dark);
+  background-color: var(--primary);
 }
 
 `
