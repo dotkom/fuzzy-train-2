@@ -1,6 +1,6 @@
-import React from 'react';
-import Homepage from './homepage/Homepage';
-import styled, { createGlobalStyle } from 'styled-components';
+import React from "react";
+import Homepage from "./homepage/Homepage";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -14,7 +14,7 @@ body{
   background-color: var(--primary);
 }
 
-`
+`;
 
 const Index = () => (
   <>
