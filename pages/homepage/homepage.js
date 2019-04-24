@@ -1,9 +1,10 @@
 import React from 'react';
+import Circle from './Circle'
 
 const Homepage = () => (
-    <div>
-      <p>Next.js</p>
-    </div>
+  <div className="Frontpage">
+    <Circle></Circle>
+  </div>
   );
 
 export default Homepage
