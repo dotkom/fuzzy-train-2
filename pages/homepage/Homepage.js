@@ -19,7 +19,7 @@ const PolyTwo = styled(Polygon2)`
 
 const StyledCircle = styled(Circle)`
   position: fixed;
-  top: 110px;
+  top: 210px;
   left: 275px;
 `;
 
