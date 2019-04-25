@@ -25,21 +25,30 @@ const StyledCircle = styled(Circle)`
   top: 12.5%;
   left: 5%;
   width: 25%;
+  height: 25%;
 `;
 
 const StyledLogo = styled(Logo)`
   position: fixed;
-  width: 27%;
+  width: 25%;
   height: 20%;
   left: 37%;
   top: 36%;
+  @media all and (max-width: 1000px) and (min-width: 700px) {
+    width: 200px;
+  }
+  @media all and (max-width: 699px) {
+    top: 25%;
+    left: 23%;
+    width: 200px;
+  }
 `;
 
 const StyledKnowit = styled(Knowit)`
   position: fixed;
   right: 5px;
-  bottom: 0px;
-  width: 150px;
+  bottom: -10px;
+  width: 100px;
 `;
 
 const StyledFrontpage = styled.div`
