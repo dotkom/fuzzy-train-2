@@ -8,6 +8,8 @@ import CircleSVG from "./CircleSVG";
 
 const PolyOne = styled(Polygon)`
   fill: var(--secondary);
+  transition-property: background-color;
+  transition-duration: 300ms;
   position: fixed;
   right: 0px;
   top: -2.6px;
@@ -28,10 +30,14 @@ const Circles = styled(CircleSVG)`
 
 const Homepage = () => (
   <div>
-    <SwitchTheme><Circles/></SwitchTheme>
-    <SwitchTheme><PolyOne /></SwitchTheme>
+    <SwitchTheme>
+      <Circles />
+    </SwitchTheme>
+    <SwitchTheme>
+      <PolyOne />
+    </SwitchTheme>
     <PolyTwo />
-    <Logo/>
+    <Logo />
   </div>
 );
 
