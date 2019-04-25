@@ -15,13 +15,13 @@ export const getThemeHooks = () => {
     const preferedTheme = () => {
       if (!prefersDark && !prefersLight) {
         const hourNow = new Date().getHours()
-        return hourNow <= 8 && hourNow >= 20 ? 'dark' : 'light';
+        return hourNow < 8 || hourNow > 20 ? 'dark' : 'light';
       }
       else {
         return prefersDark ? 'dark' : 'light';
       }
     };
-
+    
     setThemeState({ ...themeState, currentTheme: preferedTheme(), hasThemeMounted: true });
   }, [])
   //Empty array at the end makes sure that useEffect() only gets called when ThemeProvider is mounted

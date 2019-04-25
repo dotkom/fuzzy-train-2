@@ -9,7 +9,7 @@ const lightTheme = {
 }
 
 const getTheme = (currentTheme) => {
-  return currentTheme == 'dark' ? lightTheme : darkTheme;
+  return currentTheme == 'dark' ? darkTheme: lightTheme ;
 }
 
 export default getTheme
