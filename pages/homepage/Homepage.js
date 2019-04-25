@@ -1,11 +1,13 @@
 import React from "react";
-import Circle from "./Circle";
-import Polygon1 from "./assets/Poly1.svg";
+import SwitchTheme from "./SwitchTheme";
+import Polygon from "./PolygonSVG";
 import Polygon2 from "./assets/Poly2.svg";
 import Logo from "./assets/Logo.svg";
 import styled from "styled-components";
+import CircleSVG from "./CircleSVG";
 
-const PolyOne = styled(Polygon1)`
+const PolyOne = styled(Polygon)`
+  fill: var(--secondary);
   position: fixed;
   right: 0px;
   top: -2.6px;
@@ -17,16 +19,17 @@ const PolyTwo = styled(Polygon2)`
   bottom: 1px;
 `;
 
-const StyledCircle = styled(Circle)`
+const Circles = styled(CircleSVG)`
+  fill: var(--secondary);
   position: fixed;
   top: 210px;
   left: 275px;
 `;
 
 const Homepage = () => (
-  <div className="Frontpage">
-    <StyledCircle />
-    <PolyOne />
+  <div>
+    <SwitchTheme><Circles/></SwitchTheme>
+    <SwitchTheme><PolyOne /></SwitchTheme>
     <PolyTwo />
     <Logo/>
   </div>

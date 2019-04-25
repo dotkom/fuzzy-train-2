@@ -1,26 +1,32 @@
 import React from 'react';
 import Homepage from './homepage/Homepage';
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from './colorscheme';
+
 
 const GlobalStyle = createGlobalStyle`
 :root {
   --primary: #07244C;
-
+  --secondary: #ffffff;
+  
   @media (prefers-color-scheme: light) {
-      --primary: #ffffff;
+    --primary: #ffffff;
+    --secondary: #07244C;
   }
 }
-body{
+body {
   background-color: var(--primary);
 }
 
 `
 
-const Index = () => (
-  <>
-    <GlobalStyle />
+const Index = () => {
+    return(
+    <>
+    <GlobalStyle/>
     <Homepage />
-  </>
-);
+    </>
+    )
+};
 
 export default Index;
