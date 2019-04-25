@@ -9,9 +9,12 @@ const GlobalStyle = createGlobalStyle`
   @media (prefers-color-scheme: light) {
       --primary: #ffffff;
   }
+
 }
+
 body{
-  background-color: var(--primary);
+    background-color: var(--primary);
+    position:fixed;
 }
 
 `;

@@ -9,27 +9,30 @@ import styled from "styled-components";
 const PolyOne = styled(Polygon1)`
   position: fixed;
   right: 0px;
-  top: -2.6px;
+  top: 0%;
+  width: 40%;
 `;
 
 const PolyTwo = styled(Polygon2)`
   position: fixed;
-  left: 2px;
-  bottom: 1px;
+  left: 0px;
+  bottom: 0%;
+  width: 45%;
 `;
 
 const StyledCircle = styled(Circle)`
   position: fixed;
-  top: 125px;
-  left: 235px;
+  top: 12.5%;
+  left: 5%;
+  width: 25%;
 `;
 
 const StyledLogo = styled(Logo)`
-  width: 500px;
-  height: 133px;
   position: fixed;
-  left: 700px;
-  top: 365px;
+  width: 27%;
+  height: 20%;
+  left: 37%;
+  top: 36%;
 `;
 
 const StyledKnowit = styled(Knowit)`
@@ -39,14 +42,20 @@ const StyledKnowit = styled(Knowit)`
   width: 150px;
 `;
 
+const StyledFrontpage = styled.div`
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+`;
+
 const Homepage = () => (
-  <div className="Frontpage">
+  <StyledFrontpage className="Frontpage">
     <StyledCircle />
     <PolyOne />
     <PolyTwo />
     <StyledLogo />
     <StyledKnowit />
-  </div>
+  </StyledFrontpage>
 );
 
 export default Homepage;
