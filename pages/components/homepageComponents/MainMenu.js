@@ -14,7 +14,7 @@ const Logo = styled(LogoSVG)`
 
 const MainMenuContainer = ({ className }) => {
   return (
-    <div className= {className}>
+    <div className={className}>
       <Logo />
       <Wrapper>
         <MenuTab text="Nye studenter" link="/student" />
