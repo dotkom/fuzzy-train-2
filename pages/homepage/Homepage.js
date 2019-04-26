@@ -1,49 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
-import PolygonSVG1 from "./assets/Poly1.svg";
-import PolygonSVG2 from "./assets/Poly2.svg";
+import PolygonSVG from "./assets/Poly2.svg";
 import LogoSVG from "./assets/Logo.svg";
-import CircleSVG from "./assets/Circles.svg";
 
-import ThemeToggler from "../components/themeComponents/ThemeToggler"
+import Circles from "./assets/Circles"
+import ClickablePolygon from "./assets/ClickablePolygon";
+import MainMenu from "../components/homepageComponents/MainMenu";
+import MenuTab from "../components/homepageComponents/MenuTab";
 
-const UpperPolygon = styled(PolygonSVG1)`
-  fill: ${props => props.theme.secondary};
+
+
+const LowerPolygon = styled(PolygonSVG)`
   position: fixed;
-  right: 0px;
-  top: -2.6px;
-  transition-property: background-color;
-  transition-duration: 300ms;
+  left: 0px;
+  bottom: 0px;
+  width: 70vmin;
+  height: auto;
 `;
 
-const LowerPolygon = styled(PolygonSVG2)`
-  position: fixed;
-  left: 2px;
-  bottom: 1px;
-`;
-
-const Circles = styled(CircleSVG)`
-  fill: ${props => props.theme.secondary};
-  position: fixed;
-  top: 210px;
-  left: 275px;
-`;
-
-const Logo = styled(LogoSVG)`
-  fill: ${props => props.theme.secondary};
-  fill-opacity:1;
-  fill-rule:nonzero;
-  stroke:none;
-`;
-
-const Homepage = () => (
-  <>
-    <ThemeToggler><Circles /></ThemeToggler>
-    <ThemeToggler><UpperPolygon /></ThemeToggler>
-    <LowerPolygon />
-    <Logo />
-  </>
-);
+const Homepage = () => {
+  return (
+    <>
+      <Circles />
+      <ClickablePolygon />
+      <LowerPolygon />
+      <MainMenu/>
+    </>
+  )
+};
 
 export default Homepage;

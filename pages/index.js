@@ -1,24 +1,34 @@
 import React from "react";
 import Homepage from "./homepage/Homepage";
-import { createGlobalStyle } from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 import { ThemeProvider } from "./components/themeComponents/ThemeProvider"
 
 const GlobalStyle = createGlobalStyle`
-body {
-  width: 100%;
+html, body  {
   height: 100%;
-  background-color: ${props => props.theme.primary};
-  transition-property: background-color;
-  transition-duration: 300ms;
 }
 
-html {
+body {
+  background-color: ${props => props.theme.primary};
+  font-family: 'Source Sans Pro', 'sans-serif';
+  transition-property: background-color;
+  transition-duration: 300ms;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#__next {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 `;
 
-const Index = () => {
+const Index= () => {
   return (
     <ThemeProvider>
       <GlobalStyle />
