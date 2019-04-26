@@ -37,7 +37,7 @@ const ThemeProvider = ({ children }) => {
   // returns nothing if the theme hasnt been set.
   // This makes sure we avoid e.g starting in lightmode and switching to dark when we get themeState
   if (!themeState.hasThemeLoaded) {
-    return null;
+    return <div />;
   }
 
   const toggleTheme = () => {
@@ -58,4 +58,4 @@ const ThemeProvider = ({ children }) => {
   );
 }
 
-export { useTheme , ThemeProvider }
+export { useTheme, ThemeProvider }
