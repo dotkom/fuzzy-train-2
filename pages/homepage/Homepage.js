@@ -2,12 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import PolygonSVG from "./assets/Poly2.svg";
-import LogoSVG from "./assets/Logo.svg";
 
 import Circles from "./assets/Circles"
 import ClickablePolygon from "./assets/ClickablePolygon";
 import MainMenu from "../components/homepageComponents/MainMenu";
-import MenuTab from "../components/homepageComponents/MenuTab";
 
 
 
