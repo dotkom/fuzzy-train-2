@@ -8,7 +8,7 @@ const defaultContextData = {
 }
 
 const ThemeContext = React.createContext(defaultContextData);
-const currentThemeState = () => React.useContext(ThemeContext);
+const useTheme = () => React.useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
   const [themeState, setThemeState] = React.useState({
@@ -58,4 +58,4 @@ const ThemeProvider = ({ children }) => {
   );
 }
 
-export { currentThemeState, ThemeProvider }
+export { useTheme , ThemeProvider }

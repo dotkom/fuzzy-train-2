@@ -25,7 +25,7 @@ const Homepage = () => {
       <Circles />
       <ClickablePolygon />
       <LowerPolygon />
-      <MainMenu/>
+      <MainMenu />
     </>
   )
 };
