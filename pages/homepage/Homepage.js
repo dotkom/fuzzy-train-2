@@ -13,7 +13,7 @@ const LowerPolygon = styled(PolygonSVG)`
   position: fixed;
   left: 0px;
   bottom: 0px;
-  width: 70vmin;
+  width: 60vmin;
   height: auto;
 `;
 

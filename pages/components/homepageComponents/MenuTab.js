@@ -14,11 +14,25 @@ const MenuTabContainer = ({ className, link, text }) => {
 const MenuTab = styled(MenuTabContainer)`
   font-style: normal;
   font-weight: 900;
-  font-size: 3vmin;
+  font-size: 1.6rem;
+  line-height: 65px;
+  width: 20vw;
+
   text-decoration: none;
   text-align: center;
-  line-height: 68px;
-  width: 20vw;
+
+  @media only screen and (max-width: 1024px) {
+  /* For everything bigger than 768px */
+  font-size: 2.25vw;
+  } 
+  @media only screen and (max-width: 768px) {
+  /* For everything bigger than 768px */
+    font-size: 3vw;
+    width: 100%;
+    margin-bottom: 1vh;
+  } 
+
+
   
   border-bottom: 3px solid #c4c4c4;
   opacity: 0.7;
