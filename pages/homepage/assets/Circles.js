@@ -17,7 +17,7 @@ const Circles = styled(CirclesSVG)`
   position: absolute;
   left: 10%;
   top: 10%;
-  width: 30vmin;
+  width: 25vmin;
   height: auto;
 `;
 
