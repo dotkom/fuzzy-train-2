@@ -1,5 +1,4 @@
 import { ThemeProvider as ModuleThemeProvider } from 'styled-components';
-import { getThemeHooks } from './ThemeHook'
 import React from 'react';
 import getTheme from './ThemeColorschemes'
 
@@ -12,11 +11,32 @@ const ThemeContext = React.createContext(defaultContextData);
 const currentThemeState = () => React.useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
-  const [themeState, setThemeState] = getThemeHooks();
+  const [themeState, setThemeState] = React.useState({
+    currentTheme: '',
+    hasThemeLoaded: false
+  });
+
+  //useEffect makes it possible to get information from window. Works quite similiar to didComponentsMount() for class react components
+  React.useEffect(() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches
+
+    const preferedTheme = () => {
+      if (!prefersDark && !prefersLight) {
+        const hourNow = new Date().getHours()
+        return hourNow < 8 || hourNow > 20 ? 'dark' : 'light';
+      }
+      else {
+        return prefersDark ? 'dark' : 'light';
+      }
+    };
+
+    setThemeState({ ...themeState, currentTheme: preferedTheme(), hasThemeLoaded: true });
+  }, [])
 
   // returns nothing if the theme hasnt been set.
   // This makes sure we avoid e.g starting in lightmode and switching to dark when we get themeState
-  if (!themeState.hasThemeMounted) {
+  if (!themeState.hasThemeLoaded) {
     return null;
   }
 
