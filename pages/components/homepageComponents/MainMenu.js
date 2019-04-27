@@ -14,6 +14,8 @@ const Logo = styled(LogoSVG)`
   @media only screen and (max-width: 768px) {
   /* For everything bigger than 768px */
   height: auto;
+  width: 20rem;
+  margin-bottom: 3rem;
   }
 `;
 
@@ -41,8 +43,8 @@ const Wrapper = styled.div`
   /* For everything bigger than 768px */
   grid-template-columns: auto;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 1.5rem;
-  width: 10rem;
+  gap: 2rem;
+  width: 15rem;
 
 }
 `
