@@ -26,7 +26,7 @@ const MenuTab = styled(MenuTabContainer)`
   } 
   @media only screen and (max-width: 768px) {
   /* For everything bigger than 768px */
-    font-size: 1em;
+    font-size: 1.5em;
   } 
 
 
