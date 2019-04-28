@@ -1,7 +1,7 @@
 import React from "react";
 import Homepage from "./homepage/Homepage";
-import styled, {createGlobalStyle} from "styled-components";
-import { ThemeProvider } from "./components/themeComponents/ThemeProvider"
+import styled, { createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "./components/themeComponents/ThemeProvider";
 
 const GlobalStyle = createGlobalStyle`
 html, body  {
@@ -28,7 +28,7 @@ body {
 }
 `;
 
-const Index= () => {
+const Index = () => {
   return (
     <ThemeProvider>
       <GlobalStyle />
