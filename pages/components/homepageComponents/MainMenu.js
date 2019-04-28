@@ -9,12 +9,13 @@ const Logo = styled(LogoSVG)`
   fill-opacity:1;
   fill-rule:nonzero;
   stroke:none;
-  padding-bottom: 5%;
-  width: 45vmin;
-  height: auto;
+  width: 50vmin;
+  margin-bottom: 1.5rem;
   @media only screen and (max-width: 768px) {
   /* For everything bigger than 768px */
-    width: 45%;
+  height: auto;
+  width: 20rem;
+  margin-bottom: 3rem;
   }
 `;
 
@@ -32,27 +33,37 @@ const MainMenuContainer = ({ className }) => {
 };
 
 const Wrapper = styled.div`
-
-display: flex;
-justify-content: space-between;
-flex-direction: row; 
-width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  width: 100%;
+  align-items: auto;
 
 @media only screen and (max-width: 768px) {
   /* For everything bigger than 768px */
-  flex-direction: column;
-  align-items:center;
-  width: 35%;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;
+  width: 15rem;
+
 }
 `
 
 const MainMenu = styled(MainMenuContainer)`
-  width: 100%;
+  max-width: 70rem;
+  max-width: 1200px;
+  padding: 0px 40px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
   align-self: center;
+
+@media only screen and (max-width: 768px) {
+  /* For everything bigger than 768px */
+  padding: 0px 25%;
+  height: 25rem;
+}
 
 `
 export default MainMenu

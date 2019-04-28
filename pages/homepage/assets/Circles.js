@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { useTheme } from '../../components/themeComponents/ThemeProvider';
 
-const CirclesSVG = ({ className }) => {
+const Circles = ({ className }) => {
   const themeState = useTheme()
   return (
     <svg className={className} width="217" height="245" viewBox="0 0 217 245" xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +12,7 @@ const CirclesSVG = ({ className }) => {
   )
 }
 
-const Circles = styled(CirclesSVG)`
+/*const Circles = styled(CirclesSVG)`
   fill: ${props => props.theme.secondary};
   position: absolute;
   left: 10%;
@@ -20,5 +20,5 @@ const Circles = styled(CirclesSVG)`
   width: 25vmin;
   height: auto;
 `;
-
+*/
 export default Circles;
