@@ -12,13 +12,4 @@ const Circles = ({ className }) => {
   )
 }
 
-/*const Circles = styled(CirclesSVG)`
-  fill: ${props => props.theme.secondary};
-  position: absolute;
-  left: 10%;
-  top: 10%;
-  width: 25vmin;
-  height: auto;
-`;
-*/
 export default Circles;
