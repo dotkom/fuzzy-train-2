@@ -6,7 +6,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
 body {
   background-color: #07244C;
-  font-family: 'SoHeiheiurce Sans Pro', 'sans-serif';
+  font-family: 'Source Sans Pro', 'sans-serif';
   color: #ffffff;
 }
 `
