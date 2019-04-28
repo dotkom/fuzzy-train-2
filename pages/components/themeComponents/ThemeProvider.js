@@ -2,6 +2,11 @@ import { ThemeProvider as ModuleThemeProvider } from 'styled-components';
 import React from 'react';
 import getTheme from './ThemeColorschemes'
 
+const defaultTheme = () => {
+  const hourNow = new Date().getHours()
+  return hourNow < 8 || hourNow > 20 ? 'dark' : 'light';
+}
+
 const defaultContextData = {
   currentTheme: '',
   toggleTheme: () => { }
@@ -11,10 +16,8 @@ const ThemeContext = React.createContext(defaultContextData);
 const useTheme = () => React.useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
-  const [themeState, setThemeState] = React.useState({
-    currentTheme: '',
-    hasThemeLoaded: false
-  });
+  const [currentTheme, setCurrentTheme] = React.useState('');
+  const [isLoaded, setLoaded] = React.useState(false);
 
   //useEffect makes it possible to get information from window. Works quite similiar to didComponentsMount() for class react components
   React.useEffect(() => {
@@ -23,33 +26,31 @@ const ThemeProvider = ({ children }) => {
 
     const preferedTheme = () => {
       if (!prefersDark && !prefersLight) {
-        const hourNow = new Date().getHours()
-        return hourNow < 8 || hourNow > 20 ? 'dark' : 'light';
+        return defaultTheme();
       }
       else {
         return prefersDark ? 'dark' : 'light';
       }
     };
-
-    setThemeState({ ...themeState, currentTheme: preferedTheme(), hasThemeLoaded: true });
+    setCurrentTheme(preferedTheme());
+    setLoaded(true);
   }, [])
 
   // returns nothing if the theme hasnt been set.
   // This makes sure we avoid e.g starting in lightmode and switching to dark when we get themeState
-  if (!themeState.hasThemeLoaded) {
-    return <div />;
+  if (!isLoaded) {
+    return <div />
   }
 
   const toggleTheme = () => {
-    const currentTheme = themeState.currentTheme != 'dark' ? 'dark' : 'light';
-    setThemeState({ ...themeState, currentTheme });
+    setCurrentTheme(currentTheme != 'dark' ? 'dark' : 'light')
   }
 
   return (
-    <ModuleThemeProvider theme={getTheme(themeState.currentTheme)}>
+    <ModuleThemeProvider theme={getTheme(currentTheme)}>
       <ThemeContext.Provider
         value={{
-          currentTheme: themeState.currentTheme,
+          currentTheme: currentTheme,
           toggleTheme
         }}>
         {children}
