@@ -1,0 +1,23 @@
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+
+//Temporary file for å teste routing
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #07244c;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+  }
+`;
+const Bedrifter = () => {
+  return (
+    <div>
+      <GlobalStyle />
+      <div>
+        <p>HEIHEI</p>
+      </div>
+    </div>
+  );
+};
+
+export default Bedrifter;

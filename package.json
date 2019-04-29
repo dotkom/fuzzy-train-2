@@ -1,0 +1,33 @@
+{
+  "name": "fuzzy-train-2",
+  "version": "1.0.0",
+  "description": "Electric Boogaloo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotkom/fuzzy-train-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dotkom/fuzzy-train-2/issues"
+  },
+  "homepage": "https://github.com/dotkom/fuzzy-train-2#readme",
+  "dependencies": {
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.6.0"
+  }
+}
