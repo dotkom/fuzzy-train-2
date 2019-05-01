@@ -31,7 +31,6 @@ const Logo = styled(LogoSVG)`
   }
 `;
 
-
 const MainMenu = styled(MainMenuContainer)`
   max-width: 70rem;
   max-width: 1200px;
@@ -46,15 +45,15 @@ const MainMenu = styled(MainMenuContainer)`
 
 const Homepage = () => {
   const tabs = [
-    { text: "Nye Studenter", link: "/students", isActive: false },
-    { text: "Hovedsiden", link: "/", isActive: true },
-    { text: "Bedrifter", link: "/bedrifter", isActive: false }
+    { text: 'Nye Studenter', link: '/students', isActive: false },
+    { text: 'Hovedsiden', link: '/', isActive: true },
+    { text: 'Bedrifter', link: '/bedrifter', isActive: false },
   ];
 
   return (
     <>
       <ThemeSwitcher />
-      <Logo/>
+      <Logo />
       <MainMenu tabs={tabs} />
       <PolygonContainer>
         <LowerPolygon />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from './../../components/ThemeComponents/ThemeProvider'
+import { useTheme } from './../../components/ThemeComponents/ThemeProvider';
 
 const Circles = ({ className }) => {
   const themeState = useTheme();

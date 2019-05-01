@@ -4,15 +4,11 @@ import styled from 'styled-components';
 import MenuTab from './MenuTab';
 
 const MainMenu = ({ className, tabs }) => {
-  const MenuTabs = tabs.map(
-    (tab, index) => <MenuTab text={tab.text} link={tab.link} isActive={tab.isActive} key={index}/>
-  );
+  const MenuTabs = tabs.map((tab, index) => (
+    <MenuTab text={tab.text} link={tab.link} isActive={tab.isActive} key={index} />
+  ));
 
-  return (
-    <div className={className}>
-      {MenuTabs}
-    </div>
-  );
+  return <div className={className}>{MenuTabs}</div>;
 };
 
 const StyledMenu = styled(MainMenu)`
