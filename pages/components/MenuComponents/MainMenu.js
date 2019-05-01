@@ -5,7 +5,7 @@ import MenuTab from './MenuTab';
 
 const MainMenu = ({ className, tabs }) => {
   const MenuTabs = tabs.map(
-    (tab) => <MenuTab text={tab.text} link={tab.link} isActive={tab.isActive} />
+    (tab, index) => <MenuTab text={tab.text} link={tab.link} isActive={tab.isActive} key={index}/>
   );
 
   return (
