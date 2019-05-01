@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../../components/themeComponents/ThemeProvider';
+import { useTheme } from '../../components/ThemeComponents/ThemeProvider';
 
 const ClickablePolygon = ({ className }) => {
   const themeState = useTheme();

@@ -1,22 +1,22 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import GlobalStyle from './components/GlobalStyle'
+import Menu from './components/MenuComponents/MainMenu'
+import { ThemeProvider } from './components/ThemeComponents/ThemeProvider';
 
 //Temporary file for å teste routing
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: #07244c;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #fff;
-  }
-`;
 const Bedrifter = () => {
+  const tabs = [
+    { text: "Generell Info", link: "/students", isActive: false },
+    { text: "Profilering", link: "/", isActive: true },
+    { text: "Faglig", link: "/bedrifter", isActive: false },
+    { text: "Meld Interesse", link: "/bedrifter", isActive: false },
+  ]
+
   return (
-    <div>
+    <ThemeProvider>
       <GlobalStyle />
-      <div>
-        <p>HEIHEI</p>
-      </div>
-    </div>
+      <Menu tabs={tabs}/>
+    </ThemeProvider>
   );
 };
 

@@ -37,9 +37,6 @@ const ThemeProvider = ({ children }) => {
 
   // returns nothing if the theme hasnt been set.
   // This makes sure we avoid e.g starting in lightmode and switching to dark when we get themeState
-  if (!isLoaded) {
-    return <div />;
-  }
 
   const toggleTheme = () => {
     setCurrentTheme(currentTheme != 'dark' ? 'dark' : 'light');
