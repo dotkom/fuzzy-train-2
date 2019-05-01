@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTheme } from '../../components/themeComponents/ThemeProvider';
 import CirclesSVG from '../../homepage/assets/Circles';
 import ClickablePolygonSVG from '../../homepage/assets/ClickablePolygon';
 
