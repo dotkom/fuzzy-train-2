@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import InputField from "./components/InputField.js";
-import Checkbox from "./Checkbox.js";
-import CirclesTest from "./homepage/assets/Circles";
+import React from 'react';
+import styled from 'styled-components';
+import InputField from './components/InputField.js';
+import Checkbox from './Checkbox.js';
+import CirclesTest from './homepage/assets/Circles';
 
 const Circles = styled(CirclesTest)`
   position: fixed;
@@ -32,7 +32,7 @@ const StyledLabel = styled.label`
 
 const StyledLabelHeader = styled(StyledLabel)`
   ::after {
-    content: " *";
+    content: ' *';
     color: #faa21b;
   }
 `;
@@ -89,15 +89,15 @@ const InfoLabel = styled.label`
 
 const MeldInteresse = ({ className }) => {
   const checkboxList = [
-    { text: "ITEX", textOnHover: "IT-eksursjonen" },
-    { text: "Bedriftspresentasjon", textOnHover: "bedpress" },
-    { text: "Kurs / faglig arrengement", textOnHover: "kurs" },
-    { text: "Annonse i Offline", textOnHover: "reklame" },
-    { text: "Artikkel i Offline", textOnHover: "artikkel" },
-    { text: "Techtalks", textOnHover: "Tekniske taler" },
-    { text: "Lorem Ipsum", textOnHover: "Ipsum Lorem" },
-    { text: "Karrieremuligheter", textOnHover: "Jobb" },
-    { text: "foobar", textOnHover: "foo" }
+    { text: 'ITEX', textOnHover: 'IT-eksursjonen' },
+    { text: 'Bedriftspresentasjon', textOnHover: 'bedpress' },
+    { text: 'Kurs / faglig arrengement', textOnHover: 'kurs' },
+    { text: 'Annonse i Offline', textOnHover: 'reklame' },
+    { text: 'Artikkel i Offline', textOnHover: 'artikkel' },
+    { text: 'Techtalks', textOnHover: 'Tekniske taler' },
+    { text: 'Lorem Ipsum', textOnHover: 'Ipsum Lorem' },
+    { text: 'Karrieremuligheter', textOnHover: 'Jobb' },
+    { text: 'foobar', textOnHover: 'foo' },
   ];
 
   return (
@@ -105,46 +105,19 @@ const MeldInteresse = ({ className }) => {
       <form className={className} action="POST" id="meldInteresseForm">
         <HeaderStyling>Meld interesse:</HeaderStyling>
         <FormWrapper>
-          <InfoLabel>
-            Felt merket med en gul stjerne er nødvendige at du fyller ut
-          </InfoLabel>
-          <InputField
-            label="Bedrift"
-            type="text"
-            name="Bedrift"
-            placeholder="Navn på bedriften..."
-          />
-          <InputField
-            label="Kontaktperson"
-            type="text"
-            name="Kontaktperson"
-            placeholder="Navn på kontaktperson..."
-          />
-          <InputField
-            label="E-post"
-            type="email"
-            name="Epost"
-            placeholder="E-posten det ønskes svar til..."
-          />
+          <InfoLabel>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoLabel>
+          <InputField label="Bedrift" type="text" name="Bedrift" placeholder="Navn på bedriften..." />
+          <InputField label="Kontaktperson" type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." />
+          <InputField label="E-post" type="email" name="Epost" placeholder="E-posten det ønskes svar til..." />
           <StyledLabel>Huk av det du er interessert i</StyledLabel>
-          <InfoLabel>
-            Du kan holde musepekeren over de forskjellige feltene for mer
-            informasjon
-          </InfoLabel>
+          <InfoLabel>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoLabel>
           <CheckboxWrapper>
             {checkboxList.map((el, i) => (
-              <Checkbox
-                name={"Interests"}
-                value={el.text}
-                key={i}
-                title={el.textOnHover}
-              />
+              <Checkbox name={'Interests'} value={el.text} key={i} title={el.textOnHover} />
             ))}
           </CheckboxWrapper>
           <TextareaDiv>
-            <StyledLabelHeader htmlFor="bedriftKommentar">
-              Kommentarer
-            </StyledLabelHeader>
+            <StyledLabelHeader htmlFor="bedriftKommentar">Kommentarer</StyledLabelHeader>
             <StyledTextarea
               id="bedriftKommentar"
               name="bedriftKommentar"
