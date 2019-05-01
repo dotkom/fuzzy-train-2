@@ -28,7 +28,6 @@ const FormWrapper = styled.div`
 const StyledLabel = styled.label`
   font-size: 36px;
   color: ${props => props.theme.secondary}; 
-  }
 `;
 
 const CheckboxWrapper = styled.div`
