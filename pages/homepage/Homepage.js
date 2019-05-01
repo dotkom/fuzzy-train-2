@@ -5,16 +5,13 @@ import MainMenuContainer from '../components/MenuComponents/MainMenu';
 import ThemeSwitcher from '../components/ThemeComponents/ThemeSwitchers';
 import LogoSVG from './assets/Logo.svg';
 
-const PolygonContainer = styled.div`
-  width: 100%;
-  display: flex;
-`;
-
 const LowerPolygon = styled(PolygonSVG)`
   fill: ${props => props.theme.orange};
   width: 70vmin;
   height: min-content;
-  align-self: flex-end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 `;
 
 const Logo = styled(LogoSVG)`
@@ -32,14 +29,28 @@ const Logo = styled(LogoSVG)`
 `;
 
 const MainMenu = styled(MainMenuContainer)`
-  max-width: 70rem;
-  max-width: 1200px;
+  max-width: 60rem;
   padding: 0 40px;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  align-items: auto;
 
+  color: ${props => props.theme.secondary};
+  ${props =>
+    props.isActive &&
+    css`
+      border-bottom: 3px solid #dc942d;
+      opacity: 1;
+    `}
+  @media only screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
   @media only screen and (max-width: 768px) {
-    padding: 0 25%;
-    height: 15rem;
+    padding: 0 10%;
+    font-size: 12px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: auto;
   }
 `;
 
@@ -54,10 +65,8 @@ const Homepage = () => {
     <>
       <ThemeSwitcher />
       <Logo />
-      <MainMenu tabs={tabs} />
-      <PolygonContainer>
-        <LowerPolygon />
-      </PolygonContainer>
+      <MainMenu tabs={tabs} underline />
+      <LowerPolygon />
     </>
   );
 };
