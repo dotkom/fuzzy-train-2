@@ -14,9 +14,9 @@ const StyledLabel = styled.label`
   color: ${props => props.theme.secondary};
 `;
 
-const Checkbox = ({ className, name, value, key }) => {
+const Checkbox = ({ className, name, value, key, title }) => {
   return (
-    <Wrapper>
+    <Wrapper title={title}>
       <Input
         className={className}
         name={name}
