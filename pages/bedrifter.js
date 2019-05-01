@@ -10,6 +10,7 @@ body {
   font-family: 'Source Sans Pro', 'sans-serif';
   color: #ffffff;
 }
+
 `;
 const Bedrifter = () => {
   return (
@@ -17,6 +18,7 @@ const Bedrifter = () => {
       <GlobalStyle />
       <MeldInteresse />
     </ThemeProvider>
+
   );
 };
 
