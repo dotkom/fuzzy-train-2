@@ -27,7 +27,13 @@ const FormWrapper = styled.div`
 
 const StyledLabel = styled.label`
   font-size: 36px;
-  color: ${props => props.theme.secondary}; 
+  color: ${props => props.theme.secondary};
+`;
+
+const StyledLabelHeader = styled(StyledLabel)`
+  ::after {
+    content: " *";
+    color: #faa21b;
   }
 `;
 
@@ -37,6 +43,9 @@ const CheckboxWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-column-gap: 30px;
+  border: 0.5px solid #c4c4c4;
+  padding: 7px;
+  border-radius: 10px;
 `;
 
 const StyledTextarea = styled.textarea`
@@ -48,6 +57,9 @@ const StyledTextarea = styled.textarea`
   box-sizing: border-box;
   border-radius: 5px;
   padding: 5px;
+  :invalid {
+    box-shadow: none;
+  }
 `;
 
 const TextareaDiv = styled.div`
@@ -71,24 +83,31 @@ const StyledSubmitButton = styled.input`
   }
 `;
 
+const InfoLabel = styled.label`
+  font-size: 15px;
+`;
+
 const MeldInteresse = ({ className }) => {
   const checkboxList = [
-    "ITEX",
-    "Bedriftspresentasjon",
-    "Kurs / faglig arrangement",
-    "Annonse i Offline",
-    "Artikkel i Offline",
-    "Techtalks",
-    "Annonse i Offline",
-    "Artikkel i Offline",
-    "Techtalks"
+    { text: "ITEX", textOnHover: "IT-eksursjonen" },
+    { text: "Bedriftspresentasjon", textOnHover: "bedpress" },
+    { text: "Kurs / faglig arrengement", textOnHover: "kurs" },
+    { text: "Annonse i Offline", textOnHover: "reklame" },
+    { text: "Artikkel i Offline", textOnHover: "artikkel" },
+    { text: "Techtalks", textOnHover: "Tekniske taler" },
+    { text: "Lorem Ipsum", textOnHover: "Ipsum Lorem" },
+    { text: "Karrieremuligheter", textOnHover: "Jobb" },
+    { text: "foobar", textOnHover: "foo" }
   ];
 
   return (
     <>
-      <form className={className} action="POST">
+      <form className={className} action="POST" id="meldInteresseForm">
         <HeaderStyling>Meld interesse:</HeaderStyling>
         <FormWrapper>
+          <InfoLabel>
+            Felt merket med en gul stjerne er nødvendige at du fyller ut
+          </InfoLabel>
           <InputField
             label="Bedrift"
             type="text"
@@ -107,17 +126,30 @@ const MeldInteresse = ({ className }) => {
             name="Epost"
             placeholder="E-posten det ønskes svar til..."
           />
+          <StyledLabel>Huk av det du er interessert i</StyledLabel>
+          <InfoLabel>
+            Du kan holde musepekeren over de forskjellige feltene for mer
+            informasjon
+          </InfoLabel>
           <CheckboxWrapper>
-            {checkboxList.map(el => (
-              <Checkbox name={"Interests"} value={el} key={el.id} />
+            {checkboxList.map((el, i) => (
+              <Checkbox
+                name={"Interests"}
+                value={el.text}
+                key={i}
+                title={el.textOnHover}
+              />
             ))}
           </CheckboxWrapper>
           <TextareaDiv>
-            <StyledLabel htmlFor="bedriftKommentar">Kommentarer</StyledLabel>
+            <StyledLabelHeader htmlFor="bedriftKommentar">
+              Kommentarer
+            </StyledLabelHeader>
             <StyledTextarea
               id="bedriftKommentar"
               name="bedriftKommentar"
-              placeholder="Eventuelle kommentarer..."
+              placeholder="Utdypning av ønsker og hvordan de tenkes gjennomført..."
+              required
             />
           </TextareaDiv>
           <StyledSubmitButton type="submit" value="Send inn" />
