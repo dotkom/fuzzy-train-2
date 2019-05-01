@@ -1,7 +1,7 @@
 const darkTheme = {
   primary: '#07244C',
   secondary: '#ffffff',
-  orange: '#FAA21B'
+  orange: '#FAA21B',
 };
 
 const lightTheme = {
