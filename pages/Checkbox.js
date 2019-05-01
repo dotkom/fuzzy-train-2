@@ -14,7 +14,7 @@ const StyledLabel = styled.label`
   color: ${props => props.theme.secondary};
 `;
 
-const Checkbox = ({ className, name, value }) => {
+const Checkbox = ({ className, name, value, key }) => {
   return (
     <Wrapper>
       <Input
@@ -23,6 +23,7 @@ const Checkbox = ({ className, name, value }) => {
         type={"checkbox"}
         value={value}
         id={value}
+        key={key}
       />
       <StyledLabel htmlFor={value}>{value}</StyledLabel>
     </Wrapper>

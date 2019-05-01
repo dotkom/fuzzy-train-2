@@ -27,10 +27,7 @@ const FormWrapper = styled.div`
 
 const StyledLabel = styled.label`
   font-size: 36px;
-  color: ${props => props.theme.secondary};
-  ::after {
-    content: " *";
-    color: #faa21b;
+  color: ${props => props.theme.secondary}; 
   }
 `;
 
@@ -112,7 +109,7 @@ const MeldInteresse = ({ className }) => {
           />
           <CheckboxWrapper>
             {checkboxList.map(el => (
-              <Checkbox name={"Interests"} value={el} />
+              <Checkbox name={"Interests"} value={el} key={el.id} />
             ))}
           </CheckboxWrapper>
           <TextareaDiv>
@@ -121,10 +118,9 @@ const MeldInteresse = ({ className }) => {
               id="bedriftKommentar"
               name="bedriftKommentar"
               placeholder="Eventuelle kommentarer..."
-              required
             />
           </TextareaDiv>
-          <StyledSubmitButton type="submit" value="Submit" />
+          <StyledSubmitButton type="submit" value="Send inn" />
         </FormWrapper>
       </form>
       <Circles />
