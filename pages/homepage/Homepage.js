@@ -7,11 +7,11 @@ import LogoSVG from './assets/Logo.svg';
 
 const LowerPolygon = styled(PolygonSVG)`
   fill: ${props => props.theme.orange};
-  width: 70vmin;
-  height: min-content;
+  width: 60vmin;
   position: fixed;
   bottom: 0;
   left: 0;
+  overflow: visible;
 `;
 
 const Logo = styled(LogoSVG)`
@@ -35,7 +35,6 @@ const MainMenu = styled(MainMenuContainer)`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   align-items: auto;
-
   color: ${props => props.theme.secondary};
   ${props =>
     props.isActive &&
