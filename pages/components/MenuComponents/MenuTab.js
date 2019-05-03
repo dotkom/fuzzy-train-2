@@ -14,25 +14,22 @@ const MenuTab = ({ className, link, text }) => {
 const StyledMenuTab = styled(MenuTab)`
   font-style: normal;
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 2em;
   text-decoration: none;
   text-align: center;
+  color: ${props => props.theme.secondary};
 
-  @media only screen and (max-width: 1024px) {
-    font-size: 2.25vw;
-  }
   @media only screen and (max-width: 768px) {
     font-size: 1.5em;
   }
-  border-bottom: 3px solid #c4c4c4;
-  opacity: 0.7;
-  color: ${props => props.theme.secondary};
+  opacity: ${props => (props.isActive ? 1 : 0.7)};
+
   ${props =>
-    props.isActive &&
+    props.underline &&
     css`
-      border-bottom: 3px solid ${props => props.theme.orange};
-      opacity: 1;
+      border-bottom: ${props.isActive ? '3px' : '2px'} solid;
+      border-bottom-color: ${props => (props.isActive ? props.theme.orange : '#c4c4c4')};
     `}
 `;
 export default StyledMenuTab;

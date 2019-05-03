@@ -4,11 +4,11 @@ import getTheme from './ThemeColorschemes';
 
 const defaultTheme = () => {
   const hourNow = new Date().getHours();
-  return hourNow < 8 || hourNow > 20 ? 'dark' : 'light';
+  return hourNow <= 8 || hourNow >= 20 ? 'dark' : 'light';
 };
 
 const defaultContextData = {
-  currentTheme: '',
+  currentTheme: defaultTheme(),
   toggleTheme: () => {},
 };
 
@@ -16,8 +16,7 @@ const ThemeContext = React.createContext(defaultContextData);
 const useTheme = () => React.useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = React.useState('');
-  const [isLoaded, setLoaded] = React.useState(false);
+  const [currentTheme, setCurrentTheme] = React.useState(defaultTheme());
 
   //useEffect makes it possible to get information from window. Works quite similiar to didComponentsMount() for class react components
   React.useEffect(() => {
@@ -32,7 +31,7 @@ const ThemeProvider = ({ children }) => {
       }
     };
     setCurrentTheme(preferedTheme());
-    setLoaded(true);
+    defaultContextData.currentTheme = currentTheme;
   }, []);
 
   // returns nothing if the theme hasnt been set.
@@ -40,6 +39,11 @@ const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => {
     setCurrentTheme(currentTheme != 'dark' ? 'dark' : 'light');
+  };
+
+  const defaultContextData = {
+    currentTheme: currentTheme,
+    toggleTheme: () => {},
   };
 
   return (
