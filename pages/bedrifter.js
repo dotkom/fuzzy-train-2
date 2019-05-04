@@ -4,6 +4,8 @@ import MenuContainer from './components/MenuComponents/MainMenu';
 import { ThemeProvider, useTheme } from './components/ThemeComponents/ThemeProvider';
 import styled from 'styled-components';
 import Markdown from './components/Markdown';
+import Title from './components/MenuComponents/Title';
+import Footer from './components/FooterComponents/Footer';
 
 const Menu = styled(MenuContainer)`
   min-width: 60%;
@@ -17,7 +19,7 @@ const Menu = styled(MenuContainer)`
   }
 `;
 
-const InfoBox = styled.div`
+const TopWrapper = styled.div`
   width: 60%;
   font-size: 14px;
 `;
@@ -26,7 +28,7 @@ const InfoBox = styled.div`
 const Bedrifter = () => {
   const InfoboxSource = `
   # Generell Info
-  Er du en bedrift som er på jakt etter skarpe IT-studenter? 
+  Er du en bedrift som er på jakt etter skarpe IT-studenter?  
   Da vil vi gjerne høre fra deg! Les videre for å finne ut hva vi kan tilby. 
   
   Online er linjeforeningen for informatikkstudentene ved NTNU. Våre studenter går Bachelor- 
@@ -52,8 +54,10 @@ const Bedrifter = () => {
   return (
     <ThemeProvider>
       <GlobalStyle />
+      <Title text="for bedrifter" />
       <Menu tabs={tabs} underline />
       <Markdown source={InfoboxSource} />
+      <Footer />
     </ThemeProvider>
   );
 };

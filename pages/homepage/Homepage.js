@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import PolygonSVG from './assets/Poly2.svg';
+import PolygonSVG from '../components/FooterComponents/FooterPolygon.svg';
 import MainMenuContainer from '../components/MenuComponents/MainMenu';
 import ThemeSwitcher from '../components/ThemeComponents/ThemeSwitchers';
-import LogoSVG from './assets/Logo.svg';
+import LogoSVG from '../components/MenuComponents/Logo.svg';
 
 const LowerPolygon = styled(PolygonSVG)`
   fill: ${props => props.theme.orange};
