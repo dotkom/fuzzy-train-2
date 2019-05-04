@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import CirclesSVG from '../../homepage/assets/Circles';
-import ClickablePolygonSVG from '../../homepage/assets/ClickablePolygon';
+import CirclesSVG from './Circles';
+import ClickablePolygonSVG from './ClickablePolygon';
 
 const Circles = styled(CirclesSVG)`
   height: 10rem;
