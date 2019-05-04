@@ -106,9 +106,9 @@ const MeldInteresse = ({ className }) => {
         <HeaderStyling>Meld interesse:</HeaderStyling>
         <FormWrapper>
           <InfoLabel>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoLabel>
-          <InputField label="Bedrift" type="text" name="Bedrift" placeholder="Navn på bedriften..." />
-          <InputField label="Kontaktperson" type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." />
-          <InputField label="E-post" type="email" name="Epost" placeholder="E-posten det ønskes svar til..." />
+          <InputField label="Bedrift" type="text" name="Bedrift" placeholder="Navn på bedriften..." required/>
+          <InputField label="Kontaktperson" type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required/>
+          <InputField label="E-post" type="email" name="Epost" placeholder="E-posten det ønskes svar til..." required/>
           <StyledLabel>Huk av det du er interessert i</StyledLabel>
           <InfoLabel>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoLabel>
           <CheckboxWrapper>
