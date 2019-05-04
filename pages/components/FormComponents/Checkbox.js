@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const StyledLabel = styled.label`
+const CheckboxLabel = styled.label`
   color: ${props => props.theme.secondary};
 `;
 
@@ -15,7 +15,7 @@ const Checkbox = ({ className, name, value, key, title }) => {
   return (
     <Wrapper title={title}>
       <Input className={className} name={name} type={'checkbox'} value={value} id={value} key={key} />
-      <StyledLabel htmlFor={value}>{value}</StyledLabel>
+      <CheckboxLabel htmlFor={value}>{value}</CheckboxLabel>
     </Wrapper>
   );
 };
