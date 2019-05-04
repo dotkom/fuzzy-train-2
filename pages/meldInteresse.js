@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputField from './components/InputField.js';
-import Checkbox from './Checkbox.js';
+import InputField from './components/FormComponents/InputField';
+import Checkbox from './components/FormComponents/Checkbox';
 import CirclesTest from './homepage/assets/Circles';
+import TextArea from './components/FormComponents/TextArea';
+import Label from './components/FormComponents/Label';
 
 const Circles = styled(CirclesTest)`
   position: fixed;
@@ -13,28 +15,9 @@ const HeaderStyling = styled.span`
   color: #faa21b;
   font-size: 48px;
   font-weight: 900;
-`;
-
-const FormWrapper = styled.div`
-  border-style: solid none none none;
+  border-style: none none solid none;
   border-color: grey;
   border-width: 1.5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 60%;
-`;
-
-const StyledLabel = styled.label`
-  font-size: 36px;
-  color: ${props => props.theme.secondary};
-`;
-
-const StyledLabelHeader = styled(StyledLabel)`
-  ::after {
-    content: ' *';
-    color: #faa21b;
-  }
 `;
 
 const CheckboxWrapper = styled.div`
@@ -48,26 +31,7 @@ const CheckboxWrapper = styled.div`
   border-radius: 10px;
 `;
 
-const StyledTextarea = styled.textarea`
-  background-color: ${props => props.theme.primary};
-  color: ${props => props.theme.secondary};
-  font-size: 16px;
-  resize: none;
-  border: 1px solid #c4c4c4;
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 5px;
-  :invalid {
-    box-shadow: none;
-  }
-`;
-
-const TextareaDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledSubmitButton = styled.input`
+const SubmitButton = styled.input`
   color: ${props => props.theme.secondary};
   font-size: 25px;
   border-radius: 15px;
@@ -83,7 +47,8 @@ const StyledSubmitButton = styled.input`
   }
 `;
 
-const InfoLabel = styled.label`
+const InfoText = styled.p`
+  color: ${props => props.theme.secondary};
   font-size: 15px;
 `;
 
@@ -104,29 +69,24 @@ const MeldInteresse = ({ className }) => {
     <>
       <form className={className} action="POST" id="meldInteresseForm">
         <HeaderStyling>Meld interesse:</HeaderStyling>
-        <FormWrapper>
-          <InfoLabel>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoLabel>
-          <InputField label="Bedrift" type="text" name="Bedrift" placeholder="Navn på bedriften..." required/>
-          <InputField label="Kontaktperson" type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required/>
-          <InputField label="E-post" type="email" name="Epost" placeholder="E-posten det ønskes svar til..." required/>
-          <StyledLabel>Huk av det du er interessert i</StyledLabel>
-          <InfoLabel>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoLabel>
-          <CheckboxWrapper>
-            {checkboxList.map((el, i) => (
-              <Checkbox name={'Interests'} value={el.text} key={i} title={el.textOnHover} />
-            ))}
-          </CheckboxWrapper>
-          <TextareaDiv>
-            <StyledLabelHeader htmlFor="bedriftKommentar">Kommentarer</StyledLabelHeader>
-            <StyledTextarea
-              id="bedriftKommentar"
-              name="bedriftKommentar"
-              placeholder="Utdypning av ønsker og hvordan de tenkes gjennomført..."
-              required
-            />
-          </TextareaDiv>
-          <StyledSubmitButton type="submit" value="Send inn" />
-        </FormWrapper>
+        <InfoText>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoText>
+        <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
+        <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
+        <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
+        <Label>Huk av det du er interessert i</Label>
+        <InfoText>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoText>
+        <CheckboxWrapper>
+          {checkboxList.map((el, index) => (
+            <Checkbox name={'Interests'} value={el.text} key={index} title={el.textOnHover} />
+          ))}
+        </CheckboxWrapper>
+        <TextArea
+          id="bedriftKommentar"
+          name="Kommentarer"
+          placeholder="Utdypning av ønsker og hvordan de tenkes gjennomført..."
+          required
+        />
+        <SubmitButton type="submit" value="Send inn" />
       </form>
       <Circles />
     </>
@@ -138,6 +98,14 @@ const MeldInteresseStyle = styled(MeldInteresse)`
   flex-direction: column;
   width: 80rem;
   height: 70rem;
+  ${Label} {
+    font-size: 36px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60%;
 `;
 
 export default MeldInteresseStyle;

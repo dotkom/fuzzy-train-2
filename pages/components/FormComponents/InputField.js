@@ -1,18 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-
-const Label = styled.label`
-  font-size: 36px;
-  color: ${props => props.theme.secondary};
-  ${props =>
-    props.isRequired &&
-    css`
-      &:after {
-        content: ' *';
-        color: ${props => props.theme.orange};
-      }
-    `}
-`;
+import Label from './Label';
 
 const Input = styled.input`
   color: ${props => props.theme.secondary};
@@ -26,11 +14,11 @@ const Input = styled.input`
   }
 `;
 
-const InputField = ({ className, type, name, placeholder, label, required }) => {
+const InputField = ({ className, type, name, placeholder, required }) => {
   return (
     <div className={className}>
       <Label htmlFor={name} isRequired={required}>
-        {label}
+        {name}
       </Label>
       <Input type={type} name={name} placeholder={placeholder} required={required} />
     </div>
