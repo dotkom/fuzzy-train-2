@@ -36,6 +36,8 @@ const StyledTitle = styled(Title)`
   width: 60%;
   height: auto;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export default StyledTitle;

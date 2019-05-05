@@ -5,12 +5,25 @@ import GenerellInfo from './GenerellInfo';
 import Profilering from './Profilering';
 import Faglig from './Faglig';
 import InteresseForm from './InteresseForm';
-import Menu from '../components/MenuComponents/MainMenu';
+import MenuContainer from '../components/MenuComponents/MainMenu';
 
 const PageBody = styled.div`
   width: 100%;
   height: 100%;
   padding: 2em;
+  display: flex;
+  justify-content: center;
+`;
+const Menu = styled(MenuContainer)`
+  min-width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: auto;
+
+  & > a {
+    font-size: 14px;
+  }
 `;
 
 const CompanyTabs = ({ router }) => {
