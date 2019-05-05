@@ -3,9 +3,9 @@ import { css } from 'styled-components';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-const MenuTab = ({ className, link, text }) => {
+const MenuTab = ({ className, link, text, browserUrl }) => {
   return (
-    <Link href={link}>
+    <Link href={link} as={browserUrl}>
       <a className={className}>{text}</a>
     </Link>
   );

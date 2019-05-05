@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PolygonSVG from '../components/FooterComponents/FooterPolygon.svg';
-import MainMenuContainer from '../components/MenuComponents/MainMenu';
+import Menu from '../components/MenuComponents/MainMenu';
 import ThemeSwitcher from '../components/ThemeComponents/ThemeSwitchers';
 import LogoSVG from '../components/MenuComponents/Logo.svg';
 
@@ -35,7 +35,7 @@ const Logo = styled(LogoSVG)`
   }
 `;
 
-const MainMenu = styled(MainMenuContainer)`
+const MainMenu = styled(Menu)`
   max-width: 60rem;
   padding: 0 40px;
   display: grid;
@@ -62,9 +62,9 @@ const MainMenu = styled(MainMenuContainer)`
 
 const Homepage = () => {
   const tabs = [
-    { text: 'Nye Studenter', link: '/students', isActive: false },
-    { text: 'Hovedsiden', link: '/', isActive: true },
-    { text: 'Bedrifter', link: '/bedrifter', isActive: false },
+    { text: 'Nye Studenter', link: '/StudentPage'},
+    { text: 'Hovedsiden', link: '/'},
+    { text: 'Bedrifter', link: '/companies'},
   ];
 
   return (
@@ -72,7 +72,7 @@ const Homepage = () => {
       <ThemeSwitcher />
       <Main>
         <Logo />
-        <MainMenu tabs={tabs} underline />
+        <MainMenu tabs={tabs} activeTab={1} underline/>
       </Main>
       <LowerPolygon />
     </>
