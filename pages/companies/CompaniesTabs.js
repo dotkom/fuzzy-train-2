@@ -5,7 +5,7 @@ import GenerellInfo from './GenerellInfo';
 import Profilering from './Profilering';
 import Faglig from './Faglig';
 import InteresseForm from './InteresseForm';
-import MenuContainer from '../components/MenuComponents/MainMenu';
+import MenuContainer from '../components/MenuComponents/Menu';
 
 const PageBody = styled.div`
   width: 100%;
@@ -30,7 +30,6 @@ const CompanyTabs = ({ router }) => {
   const {
     query: { tab },
   } = router;
-
   const tabs = [
     {
       text: 'Generell Info',
@@ -58,13 +57,15 @@ const CompanyTabs = ({ router }) => {
   const changeTab = tab => {
     if (activeTab != tab) setActiveTab(tab);
   };
-
   return (
     <>
       <Menu tabs={tabs} underline activeTab={activeTab} />
       <PageBody>
         {(() => {
           switch (tab) {
+            case undefined:
+              changeTab(0);
+              return <GenerellInfo />;
             case 'GenerellInfo':
               changeTab(0);
               return <GenerellInfo />;
