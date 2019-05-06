@@ -22,7 +22,7 @@ const Menu = styled(MenuContainer)`
   align-items: auto;
 
   & > a {
-    font-size: 14px;
+    font-size: 1.25em;
   }
 `;
 

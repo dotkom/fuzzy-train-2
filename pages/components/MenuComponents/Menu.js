@@ -20,10 +20,6 @@ const MenuTab = styled(MenuTabContainer)`
     `}
 `;
 
-const SubMenuTab = styled(MenuTabContainer)`
-  font-size: 14px;
-`;
-
 const Menu = ({ className, tabs, isMainMenu, activeTab, underline }) => {
   const MenuTabs = tabs.map((tab, index) => (
     <MenuTab
@@ -37,6 +33,6 @@ const Menu = ({ className, tabs, isMainMenu, activeTab, underline }) => {
   ));
 
   return <div className={className}>{MenuTabs}</div>;
-};
+}
 
 export default Menu;
