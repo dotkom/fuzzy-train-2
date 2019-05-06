@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-const MenuTabContainer = ({ className, link, text }) => {
+const MenuTab = ({ className, link, text }) => {
   return (
     <Link href={link}>
       <a className={className}>{text}</a>
@@ -11,7 +11,7 @@ const MenuTabContainer = ({ className, link, text }) => {
   );
 };
 
-const MenuTab = styled(MenuTabContainer)`
+const StyledMenuTab = styled(MenuTab)`
   font-style: normal;
   font-weight: 900;
   font-size: 1.5em;
@@ -31,8 +31,8 @@ const MenuTab = styled(MenuTabContainer)`
   ${props =>
     props.isActive &&
     css`
-      border-bottom: 3px solid #dc942d;
+      border-bottom: 3px solid ${props => props.theme.orange};
       opacity: 1;
     `}
 `;
-export default MenuTab;
+export default StyledMenuTab;
