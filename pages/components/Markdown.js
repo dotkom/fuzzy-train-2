@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 const StyledMarkdown = styled.div`
-  width: 60%;
+  max-width: 60%;
+  width: 100%;
   font-size: 14px;
   color: ${props => props.theme.secondary};
   & > * + * {
