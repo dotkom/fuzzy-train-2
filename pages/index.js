@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import Homepage from "./homepage/Homepage";
 import styled, { createGlobalStyle } from "styled-components";
@@ -27,6 +28,12 @@ const GlobalStyle = createGlobalStyle`
     justify-content: space-between;
   }
 `;
+=======
+import React from 'react';
+import Homepage from './homepage/Homepage';
+import GlobalStyle from './components/GlobalStyle';
+import { ThemeProvider } from './components/ThemeComponents/ThemeProvider';
+>>>>>>> 703268604a97094b8d12ab44e9726e1e47ad0531
 
 const Index = () => {
   return (
