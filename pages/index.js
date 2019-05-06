@@ -1,39 +1,7 @@
-<<<<<<< HEAD
-import React from "react";
-import Homepage from "./homepage/Homepage";
-import styled, { createGlobalStyle } from "styled-components";
-import { ThemeProvider } from "./components/themeComponents/ThemeProvider";
-
-const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    background-color: ${props => props.theme.primary};
-    font-family: 'Source Sans Pro', sans-serif;
-    transition-property: background-color;
-    transition-duration: 300ms;
-    margin: 0;
-    padding: 0;
-  }
-
-  #__next {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-`;
-=======
 import React from 'react';
 import Homepage from './homepage/Homepage';
 import GlobalStyle from './components/GlobalStyle';
 import { ThemeProvider } from './components/ThemeComponents/ThemeProvider';
->>>>>>> 703268604a97094b8d12ab44e9726e1e47ad0531
 
 const Index = () => {
   return (
