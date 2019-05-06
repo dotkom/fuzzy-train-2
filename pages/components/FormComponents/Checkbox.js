@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 
 const CheckboxLabel = styled.label`
   color: ${props => props.theme.secondary};
+  font-size: 16px;
 `;
 
 const Checkbox = ({ className, name, value, key, title }) => {
