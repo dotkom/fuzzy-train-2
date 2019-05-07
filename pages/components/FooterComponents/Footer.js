@@ -1,36 +1,51 @@
 import React from 'react';
 import styled from 'styled-components';
-import FooterSVG from './Footer.svg';
 import LogoSVG from '../MenuComponents/Logo.svg';
 
 const Logo = styled(LogoSVG)`
-  fill: ${props => props.theme.primary};
-  width: 40vmin;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  right: 20px;
+  bottom: 20px;
+  width: 40vmin;
+  fill: ${props => props.theme.primary};
 `;
 
-const Footer = ({ className }) => {
+const Container = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+`;
+
+const RightDiv = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vmin;
+  height: 30vmin;
+  transform: rotate(20deg) translate(-5%, 60%);
+  background: #dc942d;
+`;
+
+const LeftDiv = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 125%;
+  height: 25vmin;
+  transform: rotate(-5deg) translate(10%, 45%);
+  background: ${props => props.theme.secondary};
+`;
+
+const Footer = () => {
   return (
-    <div className={className}>
-      <svg width="1925" height="360" viewBox="0 0 1920 355" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-117 0C-117 0 623 254.161 665 290.18C707 326.2 694.5 365.132 697.5 449H-117V0Z" fill="#DC942D" />
-        <rect x="1920" y="355" width="1920" height="60" transform="rotate(-180 1920 355)" />
-        <path d="M1920 300.5L0 300.5L1920 142L1920 300.5Z" />
-      </svg>
-      <Logo/>
-    </div>
+    <Container>
+      <RightDiv />
+      <LeftDiv />
+      <Logo />
+    </Container>
   );
 };
 
-const StyledFooter = styled(Footer)`
-  width: 100%;
-  svg {
-    fill: ${props => props.theme.secondary};
-  }
-  ${Logo} {
-    fill: ${props => props.theme.primary};
-  }
-`;
-export default StyledFooter;
+export default Footer;
