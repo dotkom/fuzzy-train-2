@@ -7,13 +7,6 @@ import Faglig from './Faglig';
 import InteresseForm from './InteresseForm';
 import MenuContainer from '../components/MenuComponents/Menu';
 
-const PageBody = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-`;
 const Menu = styled(MenuContainer)`
   min-width: 60%;
   display: grid;
@@ -60,27 +53,25 @@ const CompanyTabs = ({ router }) => {
   return (
     <>
       <Menu tabs={tabs} underline activeTab={activeTab} />
-      <PageBody>
-        {(() => {
-          switch (tab) {
-            case undefined:
-              changeTab(0);
-              return <GenerellInfo />;
-            case 'GenerellInfo':
-              changeTab(0);
-              return <GenerellInfo />;
-            case 'Profilering':
-              changeTab(1);
-              return <Profilering />;
-            case 'Faglig':
-              changeTab(2);
-              return <Faglig />;
-            case 'MeldInteresse':
-              changeTab(3);
-              return <InteresseForm />;
-          }
-        })()}
-      </PageBody>
+      {(() => {
+        switch (tab) {
+          case undefined:
+            changeTab(0);
+            return <GenerellInfo />;
+          case 'GenerellInfo':
+            changeTab(0);
+            return <GenerellInfo />;
+          case 'Profilering':
+            changeTab(1);
+            return <Profilering />;
+          case 'Faglig':
+            changeTab(2);
+            return <Faglig />;
+          case 'MeldInteresse':
+            changeTab(3);
+            return <InteresseForm />;
+        }
+      })()}
     </>
   );
 };
