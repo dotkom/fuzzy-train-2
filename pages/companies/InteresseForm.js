@@ -5,7 +5,11 @@ import Checkbox from '../components/FormComponents/Checkbox';
 import TextArea from '../components/FormComponents/TextArea';
 import Label from '../components/FormComponents/Label';
 
-
+const InputFieldWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+`;
 const HeaderStyling = styled.span`
   color: #faa21b;
   font-size: 48px;
@@ -65,8 +69,10 @@ const MeldInteresse = ({ className }) => {
       <form className={className} action="POST" id="meldInteresseForm">
         <HeaderStyling>Meld interesse:</HeaderStyling>
         <InfoText>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoText>
-        <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
-        <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
+        <InputFieldWrapper>
+          <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
+          <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
+        </InputFieldWrapper>
         <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
         <Label>Huk av det du er interessert i</Label>
         <InfoText>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoText>
