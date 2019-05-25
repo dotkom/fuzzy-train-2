@@ -20,7 +20,7 @@ const MenuTab = styled(MenuTabContainer)`
     `}
 `;
 
-const Menu = ({ className, tabs, isMainMenu, activeTab, underline }) => {
+const Menu = ({ className, tabs, activeTab, underline }) => {
   const MenuTabs = tabs.map((tab, index) => (
     <MenuTab
       text={tab.text}
@@ -28,7 +28,6 @@ const Menu = ({ className, tabs, isMainMenu, activeTab, underline }) => {
       isActive={index == activeTab}
       key={index}
       underline={underline}
-      browserUrl={tab.browserUrl}
     />
   ));
 

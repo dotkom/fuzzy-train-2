@@ -1,7 +1,7 @@
 import React from 'react';
 import Markdown from '../components/Markdown';
 
-  const InfoboxSource = `
+const InfoboxSource = `
   # Generell Info
   Er du en bedrift som er på jakt etter skarpe IT-studenter?  
   Da vil vi gjerne høre fra deg! Les videre for å finne ut hva vi kan tilby. 
@@ -19,11 +19,9 @@ import Markdown from '../components/Markdown';
   
   Send epost til bedriftskontakt
   `;
-  
-  const GenerellInfo = () => {
-    return (
-    <Markdown source={InfoboxSource}/>
-    )
-  }
 
-  export default GenerellInfo;
+const GenerellInfo = () => {
+  return <Markdown source={InfoboxSource} />;
+};
+
+export default GenerellInfo;

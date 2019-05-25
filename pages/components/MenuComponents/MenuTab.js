@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const MenuTabContainer = ({ className, link, text, browserUrl }) => {
   return (
-    <Link href={link} as={browserUrl}>
+    <Link href={link} >
       <a className={className}>{text}</a>
     </Link>
   );

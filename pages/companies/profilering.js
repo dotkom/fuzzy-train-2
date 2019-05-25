@@ -1,5 +1,7 @@
 import React from 'react';
 import Markdown from '../components/Markdown';
+import PageBody from './PageBody';
+import Tabs from './Tabs';
 
 const InfoboxSource = `
   # Profilering
@@ -11,7 +13,12 @@ const InfoboxSource = `
   `;
 
 const Profilering = () => {
-  return <Markdown source={InfoboxSource} />;
+  return (
+    <PageBody>
+      <Tabs activeTab={1} />
+      <Markdown source={InfoboxSource} />
+    </PageBody>
+  );
 };
 
 export default Profilering;
