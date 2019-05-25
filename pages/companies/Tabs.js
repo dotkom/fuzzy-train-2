@@ -7,11 +7,11 @@ import InteresseForm from './meldinteresse';
 import MenuContainer from '../components/MenuComponents/Menu';
 
 const Menu = styled(MenuContainer)`
-  min-width: 60%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   align-items: auto;
+  margin-bottom: 4rem;
 
   & > a {
     font-size: 1.25em;

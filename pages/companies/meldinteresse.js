@@ -6,19 +6,12 @@ import TextArea from '../components/FormComponents/TextArea';
 import Label from '../components/FormComponents/Label';
 import PageBody from './PageBody';
 import Tabs from './Tabs';
+import Markdown from '../components/Markdown';
 
 const InputFieldWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-`;
-const HeaderStyling = styled.span`
-  color: #faa21b;
-  font-size: 48px;
-  font-weight: 900;
-  border-style: none none solid none;
-  border-color: grey;
-  border-width: 1.5px;
 `;
 
 const CheckboxWrapper = styled.div`
@@ -53,6 +46,11 @@ const InfoText = styled.p`
   font-size: 15px;
 `;
 
+const HeaderSource = `
+  # Meld interesse:
+  Felt merket med gul stjerne er nødvendige at du fyller ut.
+`;
+
 const MeldInteresse = ({ className }) => {
   const checkboxList = [
     { text: 'ITEX', textOnHover: 'IT-eksursjonen' },
@@ -70,8 +68,7 @@ const MeldInteresse = ({ className }) => {
     <PageBody>
       <Tabs activeTab={3} />
       <form className={className} action="POST" id="meldInteresseForm">
-        <HeaderStyling>Meld interesse:</HeaderStyling>
-        <InfoText>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoText>
+        <Markdown source={HeaderSource} />
         <InputFieldWrapper>
           <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
           <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
@@ -99,7 +96,6 @@ const MeldInteresse = ({ className }) => {
 const MeldInteresseStyle = styled(MeldInteresse)`
   display: flex;
   flex-direction: column;
-  width: 60%;
   ${Label} {
     font-size: 24px;
   }
