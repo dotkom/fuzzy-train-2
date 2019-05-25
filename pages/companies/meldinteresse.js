@@ -4,6 +4,8 @@ import InputField from '../components/FormComponents/InputField';
 import Checkbox from '../components/FormComponents/Checkbox';
 import TextArea from '../components/FormComponents/TextArea';
 import Label from '../components/FormComponents/Label';
+import PageBody from './PageBody';
+import Tabs from './Tabs';
 
 const InputFieldWrapper = styled.div`
   display: grid;
@@ -65,7 +67,8 @@ const MeldInteresse = ({ className }) => {
   ];
 
   return (
-    <>
+    <PageBody>
+      <Tabs activeTab={3} />
       <form className={className} action="POST" id="meldInteresseForm">
         <HeaderStyling>Meld interesse:</HeaderStyling>
         <InfoText>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoText>
@@ -89,7 +92,7 @@ const MeldInteresse = ({ className }) => {
         />
         <SubmitButton type="submit" value="Send inn" />
       </form>
-    </>
+    </PageBody>
   );
 };
 

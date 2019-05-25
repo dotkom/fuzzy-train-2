@@ -1,5 +1,7 @@
 import React from 'react';
 import Markdown from '../components/Markdown';
+import PageBody from './PageBody';
+import Tabs from './Tabs';
 
 const InfoboxSource = `
   # Faglig 
@@ -11,7 +13,12 @@ const InfoboxSource = `
   `;
 
 const Faglig = () => {
-  return <Markdown source={InfoboxSource} />;
+  return (
+    <PageBody>
+      <Tabs activeTab={2} />
+      <Markdown source={InfoboxSource} />
+    </PageBody>
+  );
 };
 
 export default Faglig;

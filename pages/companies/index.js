@@ -3,17 +3,17 @@ import GlobalStyle from '../components/GlobalStyle';
 import { ThemeProvider, useTheme } from '../components/ThemeComponents/ThemeProvider';
 import Title from '../components/MenuComponents/Title';
 import Footer from '../components/FooterComponents/Footer';
-import Tabs from './CompaniesTabs';
+import Tabs from './Tabs';
+import PageBody from './PageBody';
+import GenerellInfo from './info';
 
 //Temporary file for å teste routing
 const Bedrifter = () => {
   return (
-    <ThemeProvider>
-      <GlobalStyle />
-      <Title text="for bedrifter" />
-      <Tabs />
-      <Footer />
-    </ThemeProvider>
+    <PageBody>
+      <Tabs activeTab={0}/>
+      <GenerellInfo />
+    </PageBody>
   );
 };
 
