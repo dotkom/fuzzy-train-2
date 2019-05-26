@@ -1,13 +1,18 @@
 import React from 'react';
 import { css } from 'styled-components';
 import styled from 'styled-components';
-import Link from 'next/link';
+import { withRouter } from 'next/router';
 
-const MenuTabContainer = ({ className, link, text }) => {
+const MenuTabContainer = ({ children, router, link, className }) => {
+  const handleClick = e => {
+    e.preventDefault();
+    router.push(link);
+  };
+
   return (
-    <Link href={link}>
-      <a className={className}>{text}</a>
-    </Link>
+    <a href={link} onClick={handleClick} className={className}>
+      {children}
+    </a>
   );
 };
 
@@ -15,25 +20,20 @@ const MenuTab = styled(MenuTabContainer)`
   text-decoration: none;
   text-align: center;
   color: ${props => props.theme.secondary};
-  opacity: ${props => (props.isActive ? 1 : 0.7)};
+  opacity: ${props => (props.router.pathname == props.link ? 1 : 0.7)};
   font-weight: 900;
-  font-size: 1.5rem;
-  line-height: 2em;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
 
   @media only screen and (max-width: 768px) {
-    font-size: 1.5em;
+    font-size: 0.75rem;
   }
 
   ${props =>
     props.underline &&
     css`
-      border-bottom: ${props.isActive ? '3px' : '2px'} solid;
-      border-bottom-color: ${props.isActive ? props.theme.orange : '#c4c4c4'};
+      border-bottom: ${props.router.pathname == props.link ? `3px solid ${props.theme.orange}` : '2px solid #c4c4c4'};
     `}
 `;
 
-const SubMenuTab = styled(MenuTabContainer)` 
-
-`
-
-export default MenuTab;
+export default withRouter(MenuTab);
