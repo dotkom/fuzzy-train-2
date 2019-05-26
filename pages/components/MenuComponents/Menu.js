@@ -5,7 +5,7 @@ import MenuTab from './MenuTab';
 
 const MenuContainer = ({ className, tabs, activeTab, underline }) => {
   const MenuTabs = tabs.map((tab, index) => (
-    <MenuTab text={tab.text} link={tab.link} isActive={index == activeTab} key={index} underline={underline} />
+    <MenuTab  link={tab.link} key={index} underline={underline}>{tab.text}</MenuTab>
   ));
 
   return <div className={className}>{MenuTabs}</div>;
@@ -18,7 +18,6 @@ const Menu = styled(MenuContainer)`
   margin-bottom: 4rem;
 
   & > a {
-    font-size: 1.25em;
     flex-basis: 100%;
     margin: 0 10px;
   }
