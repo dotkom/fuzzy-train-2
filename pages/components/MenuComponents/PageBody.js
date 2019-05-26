@@ -12,13 +12,13 @@ const PageBody = ({ children, className, title }) => {
       <GlobalStyle />
       <Title text={title} />
       <PageBodyContainer>{children}</PageBodyContainer>
-      <Footer />
     </ThemeProvider>
   );
 };
 
 const PageBodyContainer = styled.div`
   width: 60%;
+
 `;
 
 export default PageBody;

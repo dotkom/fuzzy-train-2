@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import Menu from '../components/MenuComponents/Menu';
 
+
 const Tabs = ({activeTab}) => {
   const tabs = [
     {
-      text: 'Generell Info',
-      link: '/companies',
+      text: 'Organisasjonen',
+      link: '/students',
     },
     {
-      text: 'Profilering',
-      link: '/companies/profilering',
+      text: 'Komiteer',
+      link: '/students/komiteer',
     },
     {
-      text: 'Faglig',
-      link: '/companies/faglig',
+      text: 'Andre verv',
+      link: '/students/andreverv',
     },
     {
-      text: 'Meld Interesse',
-      link: '/companies/meldinteresse',
+      text: 'Annet',
+      link: '/students/annet',
     },
   ];
 
