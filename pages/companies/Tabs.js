@@ -7,7 +7,7 @@ import InteresseForm from './meldinteresse';
 import Menu from '../components/MenuComponents/Menu';
 
 
-const Tabs = ({activeTab}) => {
+const Tabs = () => {
   const tabs = [
     {
       text: 'Generell Info',
@@ -29,7 +29,7 @@ const Tabs = ({activeTab}) => {
 
   return (
     <>
-      <Menu tabs={tabs} activeTab={activeTab} underline/>
+      <Menu tabs={tabs} underline/>
     </>
   );
 };

@@ -66,7 +66,7 @@ const MeldInteresse = ({ className }) => {
 
   return (
     <PageBody title="for bedrifter">
-      <Tabs activeTab={3} />
+      <Tabs  />
       <form className={className} action="POST" id="meldInteresseForm">
         <Markdown source={HeaderSource} />
         <InputFieldWrapper>

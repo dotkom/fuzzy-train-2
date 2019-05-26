@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import MenuTab from './MenuTab';
 
-const MenuContainer = ({ className, tabs, activeTab, underline }) => {
+const MenuContainer = ({ className, tabs, underline }) => {
   const MenuTabs = tabs.map((tab, index) => (
     <MenuTab  link={tab.link} key={index} underline={underline}>{tab.text}</MenuTab>
   ));

@@ -12,7 +12,6 @@ const PageBody = ({ children, className, title }) => {
       <GlobalStyle />
       <Title text={title} />
       <PageBodyContainer>{children}</PageBodyContainer>
-      <Footer />
     </ThemeProvider>
   );
 };
