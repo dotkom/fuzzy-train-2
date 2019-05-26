@@ -1,7 +1,7 @@
 import React from 'react';
-import Markdown from '../components/Markdown';
-import PageBody from '../components/MenuComponents/PageBody';
-import Tabs from './Tabs';
+import Markdown from '../../components/Markdown';
+import PageBody from '../../components/MenuComponents/PageBody';
+import Tabs from '../Tabs';
 
 const Source = `
 # Om Online

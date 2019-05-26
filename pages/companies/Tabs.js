@@ -23,7 +23,7 @@ const Tabs = ({activeTab}) => {
 
   return (
     <>
-      <Menu tabs={tabs} activeTab={activeTab} underline/>
+      <Menu tabs={tabs} underline/>
     </>
   );
 };
