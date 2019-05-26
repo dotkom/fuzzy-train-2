@@ -11,7 +11,7 @@ import PageBody from '../components/MenuComponents/PageBody';
 const Bedrifter = () => {
   return (
     <PageBody title="for bedrifter">
-      <Tabs activeTab={0}/>
+      <Tabs />
       <GenerellInfo />
     </PageBody>
   );

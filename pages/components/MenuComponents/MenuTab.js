@@ -22,11 +22,11 @@ const MenuTab = styled(MenuTabContainer)`
   color: ${props => props.theme.secondary};
   opacity: ${props => (props.router.pathname == props.link ? 1 : 0.7)};
   font-weight: 900;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 
   @media only screen and (max-width: 768px) {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 
   ${props =>
