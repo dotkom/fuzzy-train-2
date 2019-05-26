@@ -4,13 +4,13 @@ import { ThemeProvider, useTheme } from '../components/ThemeComponents/ThemeProv
 import Title from '../components/MenuComponents/Title';
 import Footer from '../components/FooterComponents/Footer';
 import Tabs from './Tabs';
-import PageBody from './PageBody';
 import GenerellInfo from './info';
+import PageBody from '../components/MenuComponents/PageBody';
 
 //Temporary file for å teste routing
 const Bedrifter = () => {
   return (
-    <PageBody>
+    <PageBody title="for bedrifter">
       <Tabs activeTab={0}/>
       <GenerellInfo />
     </PageBody>

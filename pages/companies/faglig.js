@@ -1,6 +1,6 @@
 import React from 'react';
 import Markdown from '../components/Markdown';
-import PageBody from './PageBody';
+import PageBody from '../components/MenuComponents/PageBody';
 import Tabs from './Tabs';
 
 const InfoboxSource = `
@@ -14,7 +14,7 @@ const InfoboxSource = `
 
 const Faglig = () => {
   return (
-    <PageBody>
+    <PageBody title="for bedrifter">
       <Tabs activeTab={2} />
       <Markdown source={InfoboxSource} />
     </PageBody>

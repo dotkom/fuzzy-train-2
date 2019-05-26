@@ -4,7 +4,7 @@ import InputField from '../components/FormComponents/InputField';
 import Checkbox from '../components/FormComponents/Checkbox';
 import TextArea from '../components/FormComponents/TextArea';
 import Label from '../components/FormComponents/Label';
-import PageBody from './PageBody';
+import PageBody from '../components/MenuComponents/PageBody';
 import Tabs from './Tabs';
 import Markdown from '../components/Markdown';
 
@@ -65,7 +65,7 @@ const MeldInteresse = ({ className }) => {
   ];
 
   return (
-    <PageBody>
+    <PageBody title="for bedrifter">
       <Tabs activeTab={3} />
       <form className={className} action="POST" id="meldInteresseForm">
         <Markdown source={HeaderSource} />

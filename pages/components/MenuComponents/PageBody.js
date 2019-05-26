@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import GlobalStyle from '../components/GlobalStyle';
-import { ThemeProvider, useTheme } from '../components/ThemeComponents/ThemeProvider';
-import Footer from '../components/FooterComponents/Footer';
-import Title from '../components/MenuComponents/Title';
+import GlobalStyle from '../GlobalStyle';
+import { ThemeProvider, useTheme } from '../ThemeComponents/ThemeProvider';
+import Footer from '../FooterComponents/Footer';
+import Title from './Title';
 
 //Temporary file for å teste routing
-const PageBody = ({ children, className }) => {
+const PageBody = ({ children, className, title }) => {
   return (
     <ThemeProvider className={className}>
       <GlobalStyle />
-      <Title text="for bedrifter" />
+      <Title text={title} />
       <PageBodyContainer>{children}</PageBodyContainer>
       <Footer />
     </ThemeProvider>
