@@ -41,11 +41,6 @@ const ThemeProvider = ({ children }) => {
     setCurrentTheme(currentTheme != 'dark' ? 'dark' : 'light');
   };
 
-  const defaultContextData = {
-    currentTheme: currentTheme,
-    toggleTheme: () => {},
-  };
-
   return (
     <ModuleThemeProvider theme={getTheme(currentTheme)}>
       <ThemeContext.Provider
@@ -60,4 +55,4 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-export { useTheme, ThemeProvider };
+export { ThemeContext , useTheme, ThemeProvider };
