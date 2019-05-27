@@ -1,7 +1,7 @@
 import React from 'react';
 import Markdown from 'components/Markdown';
 
-const InfoboxSource = `
+const TextSource = `
   # Generell Info
   Er du en bedrift som er på jakt etter skarpe IT-studenter?  
   Da vil vi gjerne høre fra deg! Les videre for å finne ut hva vi kan tilby. 
@@ -20,8 +20,8 @@ const InfoboxSource = `
   Send epost til bedriftskontakt
   `;
 
-const GenerellInfo = () => {
-  return <Markdown source={InfoboxSource} />;
+const Info = () => {
+  return <Markdown source={TextSource} />;
 };
 
-export default GenerellInfo;
+export default Info;

@@ -51,7 +51,7 @@ const HeaderSource = `
   Felt merket med gul stjerne er nødvendige at du fyller ut.
 `;
 
-const MeldInteresse = ({ className }) => {
+const ReportInterestContainer = ({ className }) => {
   const checkboxList = [
     { text: 'ITEX', textOnHover: 'IT-eksursjonen' },
     { text: 'Bedriftspresentasjon', textOnHover: 'bedpress' },
@@ -66,7 +66,7 @@ const MeldInteresse = ({ className }) => {
 
   return (
     <PageBody title="for bedrifter">
-      <Tabs  />
+      <Tabs />
       <form className={className} action="POST" id="meldInteresseForm">
         <Markdown source={HeaderSource} />
         <InputFieldWrapper>
@@ -93,7 +93,7 @@ const MeldInteresse = ({ className }) => {
   );
 };
 
-const MeldInteresseStyle = styled(MeldInteresse)`
+const ReportInterest = styled(ReportInterestContainer)`
   display: flex;
   flex-direction: column;
   ${Label} {
@@ -105,4 +105,4 @@ const MeldInteresseStyle = styled(MeldInteresse)`
   justify-content: space-between;
 `;
 
-export default MeldInteresseStyle;
+export default ReportInterest;
