@@ -10,15 +10,15 @@ const TabsContainer = ({ className }) => {
     },
     {
       text: 'Profilering',
-      link: '/companies/profilering',
+      link: '/companies/profiling',
     },
     {
       text: 'Faglig',
-      link: '/companies/faglig',
+      link: '/companies/educational',
     },
     {
       text: 'Meld Interesse',
-      link: '/companies/meldinteresse',
+      link: '/companies/report-interest',
     },
   ];
 
@@ -32,7 +32,7 @@ const TabsContainer = ({ className }) => {
 const Tabs = styled(TabsContainer)`
   display: flex;
   flex-flow: row;
-  margin-bottom: 4rem;
+  margin-bottom: 4rem; 
 
   & > a {
     flex-basis: 100%;

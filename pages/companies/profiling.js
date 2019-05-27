@@ -3,7 +3,7 @@ import Markdown from 'components/Markdown';
 import PageBody from 'components/MenuComponents/PageBody';
 import Tabs from './Tabs';
 
-const InfoboxSource = `
+const TextSource = `
   # Profilering
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -12,13 +12,13 @@ const InfoboxSource = `
   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   `;
 
-const Profilering = () => {
+const Profiling = () => {
   return (
     <PageBody title="for bedrifter">
       <Tabs  />
-      <Markdown source={InfoboxSource} />
+      <Markdown source={TextSource} />
     </PageBody>
   );
 };
 
-export default Profilering;
+export default Profiling;

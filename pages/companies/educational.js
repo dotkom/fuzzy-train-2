@@ -3,7 +3,7 @@ import Markdown from 'components/Markdown';
 import PageBody from 'components/MenuComponents/PageBody';
 import Tabs from './Tabs';
 
-const InfoboxSource = `
+const TextSource = `
   # Faglig 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -55,13 +55,13 @@ Tempor aliqua laboris reprehenderit deserunt aliquip non. Eiusmod non proident i
 Reprehenderit fugiat amet Lorem velit aute eiusmod cillum exercitation voluptate nulla irure. Do irure ad minim sint veniam deserunt nisi qui sunt. Eu fugiat voluptate sint amet nisi proident dolore excepteur amet cupidatat aute. In cillum veniam excepteur cillum id magna elit velit ea. Tempor consequat adipisicing dolor eu nisi dolor consequat mollit quis in id sint irure nisi. Non consectetur laborum ex incididunt quis dolor. 
   `;
 
-const Faglig = () => {
+const Educational = () => {
   return (
     <PageBody title="for bedrifter">
       <Tabs />
-      <Markdown source={InfoboxSource} />
+      <Markdown source={TextSource} />
     </PageBody>
   );
 };
 
-export default Faglig;
+export default Educational;

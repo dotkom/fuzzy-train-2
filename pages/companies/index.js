@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Tabs from './Tabs';
-import GenerellInfo from './info';
+import Info from './info';
 import PageBody from 'components/MenuComponents/PageBody';
 
 //Temporary file for å teste routing
-const Bedrifter = () => {
+const Companies = () => {
   return (
     <PageBody title="for bedrifter">
       <Tabs />
-      <GenerellInfo />
+      <Info/>
     </PageBody>
   );
 };
 
-export default Bedrifter;
+export default Companies;
