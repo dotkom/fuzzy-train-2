@@ -6,8 +6,7 @@ import Faglig from './faglig';
 import InteresseForm from './meldinteresse';
 import Menu from '../components/MenuComponents/Menu';
 
-
-const Tabs = () => {
+const TabsContainer = ({ className }) => {
   const tabs = [
     {
       text: 'Generell Info',
@@ -29,9 +28,20 @@ const Tabs = () => {
 
   return (
     <>
-      <Menu tabs={tabs} underline/>
+      <Menu tabs={tabs} underline className={className} />
     </>
   );
 };
+
+const Tabs = styled(TabsContainer)`
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 4rem;
+
+  & > a {
+    flex-basis: 100%;
+    margin: 0 10px;
+  }
+`;
 
 export default Tabs;
