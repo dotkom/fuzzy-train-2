@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PolygonSVG from '../../components/FooterComponents/FooterPolygon.svg';
-import Menu from '../../components/MenuComponents/Menu';
-import ThemeSwitcher from '../../components/ThemeComponents/ThemeSwitchers';
+import Menu from 'components/MenuComponents/Menu';
+import ThemeSwitcher from 'components/ThemeComponents/ThemeSwitchers';
 import LogoSVG from '../../components/MenuComponents/Logo.svg';
 
 const LowerPolygon = styled(PolygonSVG)`

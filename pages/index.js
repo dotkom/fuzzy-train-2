@@ -1,7 +1,7 @@
 import React from 'react';
 import Homepage from './home/Homepage';
-import GlobalStyle from '../components/GlobalStyle';
-import { ThemeProvider, useTheme } from '../components/ThemeComponents/ThemeProvider';
+import GlobalStyle from 'components/GlobalStyle.js';
+import { ThemeProvider, useTheme } from 'components/ThemeComponents/ThemeProvider';
 
 const Index = () => {
   return (
