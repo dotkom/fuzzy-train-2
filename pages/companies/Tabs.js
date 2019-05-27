@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import GenerellInfo from './info';
-import Profilering from './profilering';
-import Faglig from './faglig';
-import InteresseForm from './meldinteresse';
-import Menu from '../components/MenuComponents/Menu';
+import Menu from '../../components/MenuComponents/Menu';
 
 const TabsContainer = ({ className }) => {
   const tabs = [

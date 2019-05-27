@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputField from '../components/FormComponents/InputField';
-import Checkbox from '../components/FormComponents/Checkbox';
-import TextArea from '../components/FormComponents/TextArea';
-import Label from '../components/FormComponents/Label';
-import PageBody from '../components/MenuComponents/PageBody';
+import InputField from '../../components/FormComponents/InputField';
+import Checkbox from '../../components/FormComponents/Checkbox';
+import TextArea from '../../components/FormComponents/TextArea';
+import Label from '../../components/FormComponents/Label';
+import PageBody from '../../components/MenuComponents/PageBody';
 import Tabs from './Tabs';
-import Markdown from '../components/Markdown';
+import Markdown from '../../components/Markdown';
 
 const InputFieldWrapper = styled.div`
   display: grid;
