@@ -20,7 +20,13 @@ const PageBody = ({ children, className, title }) => {
 };
 
 const PageBodyContainer = styled.div`
+  max-width: 1200px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-sizing: border-box;
 `;
 
 export default PageBody;

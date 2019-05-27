@@ -34,6 +34,9 @@ const StyledTitle = styled(Title)`
     font-weight: 400;
   }
   width: 100%;
+  max-width: 60%;
+  margin: 0 auto;
+  box-sizing: border-box;
   height: auto;
   display: flex;
   justify-content: space-between;
