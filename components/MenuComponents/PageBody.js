@@ -17,7 +17,7 @@ const PageBody = ({ children, className, title }) => {
 };
 
 const PageBodyContainer = styled.div`
-  width: 60%;
+  width: 80%;
 `;
 
 export default PageBody;
