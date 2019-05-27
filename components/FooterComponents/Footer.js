@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import FooterSVG from './Footer.svg'
 import LogoSVG from '../MenuComponents/Logo.svg';
 
 const Logo = styled(LogoSVG)`
@@ -11,11 +12,8 @@ const Logo = styled(LogoSVG)`
 `;
 
 const Container = styled.div`
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: 300px;
-  overflow: hidden;
 `;
 
 const RightDiv = styled.div`
@@ -41,9 +39,7 @@ const LeftDiv = styled.div`
 const Footer = () => {
   return (
     <Container>
-      <RightDiv />
-      <LeftDiv />
-      <Logo />
+      <FooterSVG/>
     </Container>
   );
 };
