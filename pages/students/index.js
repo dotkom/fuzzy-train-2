@@ -6,7 +6,7 @@ import Organisasjonen from './organisasjonen';
 const Students = () => {
   return (
     <PageBody title="for studenter">
-      <Tabs activeTab={0}/>
+      <Tabs/>
       <Organisasjonen/>
     </PageBody>
   );

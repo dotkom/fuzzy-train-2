@@ -15,7 +15,7 @@ const InfoboxSource = `
 const Profilering = () => {
   return (
     <PageBody title="for bedrifter">
-      <Tabs activeTab={1} />
+      <Tabs  />
       <Markdown source={InfoboxSource} />
     </PageBody>
   );

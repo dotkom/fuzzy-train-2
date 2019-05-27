@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Menu from '../components/MenuComponents/Menu';
+import styled from 'styled-components';
 
-
-const Tabs = ({activeTab}) => {
+const TabsContainer = ({ className }) => {
   const tabs = [
     {
       text: 'Organisasjonen',
@@ -24,9 +24,20 @@ const Tabs = ({activeTab}) => {
 
   return (
     <>
-      <Menu tabs={tabs} activeTab={activeTab} underline/>
+      <Menu tabs={tabs} underline className={className} />
     </>
   );
 };
+
+const Tabs = styled(TabsContainer)`
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 1rem;
+
+  & > a {
+    flex-basis: 100%;
+    margin: 0 10px;
+  }
+`;
 
 export default Tabs;

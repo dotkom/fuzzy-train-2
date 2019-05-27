@@ -15,7 +15,7 @@ const InfoboxSource = `
 const Faglig = () => {
   return (
     <PageBody title="for bedrifter">
-      <Tabs activeTab={2} />
+      <Tabs/>
       <Markdown source={InfoboxSource} />
     </PageBody>
   );

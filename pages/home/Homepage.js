@@ -42,13 +42,7 @@ const MainMenu = styled(Menu)`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   align-items: auto;
-  color: ${props => props.theme.secondary};
-  ${props =>
-    props.isActive &&
-    css`
-      border-bottom: 3px solid #dc942d;
-      opacity: 1;
-    `}
+
   @media only screen and (max-width: 1024px) {
     font-size: 16px;
   }
@@ -72,7 +66,7 @@ const Homepage = () => {
       <ThemeSwitcher />
       <Main>
         <Logo />
-        <MainMenu tabs={tabs} activeTab={1} underline/>
+        <MainMenu tabs={tabs} underline/>
       </Main>
       <LowerPolygon />
     </>
