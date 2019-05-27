@@ -2,6 +2,7 @@ import React from 'react';
 import Markdown from '../../components/Markdown';
 import PageBody from '../../components/MenuComponents/PageBody';
 import Tabs from '../Tabs';
+import SubTabs from './SubTabs';
 
 const Source = `
 # Om Online
@@ -20,6 +21,7 @@ const Komiteer = () => {
   return (
     <PageBody title="for studenter">
       <Tabs activeTab={1} />
+      <SubTabs />
       <Markdown source={Source} />
     </PageBody>
   );

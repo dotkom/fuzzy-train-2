@@ -32,8 +32,4 @@ const MenuTab = styled(MenuTabContainer)`
     `}
 `;
 
-const SubMenuTab = styled(MenuTabContainer)` 
-
-`
-
 export default MenuTab;
