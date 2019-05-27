@@ -33,7 +33,7 @@ const StyledTitle = styled(Title)`
     font-style: italic;
     font-weight: 400;
   }
-  width: 60%;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;

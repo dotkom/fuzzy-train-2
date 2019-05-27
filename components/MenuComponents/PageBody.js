@@ -8,16 +8,19 @@ import Title from './Title';
 //Temporary file for å teste routing
 const PageBody = ({ children, className, title }) => {
   return (
-    <ThemeProvider className={className}>
-      <GlobalStyle />
-      <Title text={title} />
-      <PageBodyContainer>{children}</PageBodyContainer>
-    </ThemeProvider>
+    <>
+      <ThemeProvider className={className}>
+        <GlobalStyle />
+        <Title text={title} />
+        <PageBodyContainer>{children}</PageBodyContainer>
+      </ThemeProvider>
+      <Footer />
+    </>
   );
 };
 
 const PageBodyContainer = styled.div`
-  width: 80%;
+  width: 100%;
 `;
 
 export default PageBody;
