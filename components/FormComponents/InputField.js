@@ -4,11 +4,11 @@ import Label from './Label';
 
 const Input = styled.input`
   color: ${props => props.theme.secondary};
-  border: 1px solid #c4c4c4;
+  border: 2px solid ${props => props.theme.secondary};
   box-sizing: border-box;
   border-radius: 5px;
   background-color: ${props => props.theme.primary};
-  padding: 7px;
+  padding: 12px;
   ::-webkit-input-placeholder {
     font-size: 24px;
   }
@@ -28,6 +28,7 @@ const InputField = ({ className, type, name, placeholder, required }) => {
 const StyledInputField = styled(InputField)`
   display: flex;
   flex-direction: column;
+  margin: 2px;
 `;
 
 export default StyledInputField;

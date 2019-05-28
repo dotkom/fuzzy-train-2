@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import CirclesSVG from '../../homepage/assets/Circles';
-import ClickablePolygonSVG from '../../homepage/assets/ClickablePolygon';
+import CirclesSVG from './Circles';
+import ClickablePolygonSVG from './ClickablePolygon';
 
 const Circles = styled(CirclesSVG)`
-  height: 10rem;
-  width: auto;
-  margin: 3rem 0 0 3rem;
-  align-self: flex-end;
+  position: fixed;
+  top: 10vmin;
+  left: 20vmin;
+  height: 25vmin;
 `;
 
 const ClickablePolygon = styled(ClickablePolygonSVG)`
-  width: 60vmin;
-  height: max-content;
+  width: 80vmin;
+  position: fixed;
+  top: 0;
+  right: 0;
 `;
 
 const ThemeSwitchersContainer = ({ className }) => {

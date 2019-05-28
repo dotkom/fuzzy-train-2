@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 const Label = styled.label`
-  font-size: 36px;
+  font-size: 24px;
+  margin: 10px 0;
   color: ${props => props.theme.secondary};
   ${props =>
     props.isRequired &&
