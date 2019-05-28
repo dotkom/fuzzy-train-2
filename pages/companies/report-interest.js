@@ -1,23 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputField from './components/FormComponents/InputField';
-import Checkbox from './components/FormComponents/Checkbox';
-import CirclesTest from './homepage/assets/Circles';
-import TextArea from './components/FormComponents/TextArea';
-import Label from './components/FormComponents/Label';
+import InputField from 'components/FormComponents/InputField';
+import Checkbox from 'components/FormComponents/Checkbox';
+import TextArea from 'components/FormComponents/TextArea';
+import Label from 'components/FormComponents/Label';
+import PageBody from 'components/MenuComponents/PageBody';
+import Tabs from './Tabs';
+import Markdown from 'components/Markdown';
 
-const Circles = styled(CirclesTest)`
-  position: fixed;
-  left: 80%;
-`;
-
-const HeaderStyling = styled.span`
-  color: #faa21b;
-  font-size: 48px;
-  font-weight: 900;
-  border-style: none none solid none;
-  border-color: grey;
-  border-width: 1.5px;
+const InputFieldWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 `;
 
 const CheckboxWrapper = styled.div`
@@ -52,7 +46,12 @@ const InfoText = styled.p`
   font-size: 15px;
 `;
 
-const MeldInteresse = ({ className }) => {
+const HeaderSource = `
+  # Meld interesse:
+  Felt merket med gul stjerne er nødvendige at du fyller ut.
+`;
+
+const ReportInterestContainer = ({ className }) => {
   const checkboxList = [
     { text: 'ITEX', textOnHover: 'IT-eksursjonen' },
     { text: 'Bedriftspresentasjon', textOnHover: 'bedpress' },
@@ -66,12 +65,14 @@ const MeldInteresse = ({ className }) => {
   ];
 
   return (
-    <>
+    <PageBody title="for bedrifter">
+      <Tabs />
       <form className={className} action="POST" id="meldInteresseForm">
-        <HeaderStyling>Meld interesse:</HeaderStyling>
-        <InfoText>Felt merket med en gul stjerne er nødvendige at du fyller ut</InfoText>
-        <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
-        <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
+        <Markdown source={HeaderSource} />
+        <InputFieldWrapper>
+          <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
+          <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
+        </InputFieldWrapper>
         <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
         <Label>Huk av det du er interessert i</Label>
         <InfoText>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoText>
@@ -88,24 +89,20 @@ const MeldInteresse = ({ className }) => {
         />
         <SubmitButton type="submit" value="Send inn" />
       </form>
-      <Circles />
-    </>
+    </PageBody>
   );
 };
 
-const MeldInteresseStyle = styled(MeldInteresse)`
+const ReportInterest = styled(ReportInterestContainer)`
   display: flex;
   flex-direction: column;
-  width: 80rem;
-  height: 70rem;
   ${Label} {
-    font-size: 36px;
+    font-size: 24px;
   }
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 60%;
 `;
 
-export default MeldInteresseStyle;
+export default ReportInterest;

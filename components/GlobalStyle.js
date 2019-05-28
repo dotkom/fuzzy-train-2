@@ -18,10 +18,8 @@ const GlobalStyle = createGlobalStyle`
   #__next {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
   }
 `;
 
