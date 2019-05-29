@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components';
 import Label from './Label';
 
 const Input = styled.input`
-  color: ${props => props.theme.secondary};
-  border: 2px solid ${props => props.theme.secondary};
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
   box-sizing: border-box;
   border-radius: 5px;
-  background-color: ${props => props.theme.primary};
+  background-color: var(--primary);
   padding: 12px;
   ::-webkit-input-placeholder {
     font-size: 24px;

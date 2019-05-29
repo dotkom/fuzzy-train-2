@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import FooterSVG from './Footer.svg'
+import FooterSVG from './Footer.svg';
+import FooterDark from './FooterDark.svg';
+import FooterLight from './FooterLight.svg';
 import LogoSVG from '../MenuComponents/Logo.svg';
+import { useTheme, ThemeToggleProvider } from '../ThemeComponents/ThemeContext';
 
 const Logo = styled(LogoSVG)`
   position: absolute;
   right: 20px;
   bottom: 20px;
   width: 40vmin;
-  fill: ${props => props.theme.primary};
+  fill: var(--primary);
 `;
 
 const Container = styled.div`
@@ -33,15 +36,12 @@ const LeftDiv = styled.div`
   width: 125%;
   height: 25vmin;
   transform: rotate(-5deg) translate(10%, 45%);
-  background: ${props => props.theme.secondary};
+  background: var(--secondary);
 `;
 
-const Footer = () => {
-  return (
-    <Container>
-      <FooterSVG/>
-    </Container>
-  );
+const Footer = ({ theme }) => {
+  const themeState = useTheme();
+  return <Container>{themeState.theme == 'light' ? <FooterDark /> : <FooterLight />}</Container>;
 };
 
 export default Footer;

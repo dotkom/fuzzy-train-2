@@ -26,12 +26,12 @@ const CheckboxWrapper = styled.div`
 `;
 
 const SubmitButton = styled.input`
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
   font-size: 25px;
   border-radius: 15px;
   width: 15%;
-  background-color: ${props => props.theme.primary};
-  border-color: ${props => props.theme.secondary};
+  background-color: var(--primary);
+  border-color: var(--secondary);
   padding: 15px;
   align-self: flex-end;
   transition-duration: 250ms;
@@ -42,7 +42,7 @@ const SubmitButton = styled.input`
 `;
 
 const InfoText = styled.p`
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
   font-size: 15px;
 `;
 

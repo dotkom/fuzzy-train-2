@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
   :root {
-    --primary: ${props => props.defaultTheme.primary};
-    --secondary: ${props => props.defaultTheme.secondary};
+    --primary: ${props => props.theme.primary};
+    --secondary: ${props => props.theme.secondary};
     --orange: #FAA21B;
 
     @media (prefers-color-scheme: dark) {

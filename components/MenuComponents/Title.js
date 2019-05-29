@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ReturnArrow from './ReturnArrow';
 import Circles from '../ThemeComponents/Circles';
+import { ThemeToggleProvider } from '../ThemeComponents/ThemeContext';
 
 const StyledCircle = styled(Circles)`
   height: 50%;
@@ -22,7 +23,7 @@ const Title = ({ text, className }) => {
 
 const StyledTitle = styled(Title)`
   text-align: center;
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
 
   h1 {
     font-size: 26px;

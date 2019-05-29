@@ -3,8 +3,8 @@ import React from 'react';
 import Label from './Label';
 
 const TextArea = styled.textarea`
-  background-color: ${props => props.theme.primary};
-  color: ${props => props.theme.secondary};
+  background-color: var(--primary);
+  color: var(--secondary);
   font-size: 16px;
   resize: none;
   border: 1px solid #c4c4c4;
