@@ -1,14 +1,14 @@
 import React from 'react';
 import Homepage from './home/Homepage';
 import GlobalStyle from 'components/GlobalStyle.js';
-import { ThemeProvider, useTheme } from 'components/ThemeComponents/ThemeProvider';
+import { getDefaultTheme } from '../components/ThemeComponents/ThemeColorschemes';
 
 const Index = () => {
   return (
-    <ThemeProvider>
-      <GlobalStyle />
+    <>
+      <GlobalStyle defaultTheme={getDefaultTheme()} />
       <Homepage />
-    </ThemeProvider>
+    </>
   );
 };
 

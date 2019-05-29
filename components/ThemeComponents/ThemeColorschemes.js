@@ -1,17 +1,21 @@
 const darkTheme = {
   primary: '#07244C',
   secondary: '#ffffff',
-  orange: '#FAA21B',
 };
 
 const lightTheme = {
   primary: '#ffffff',
   secondary: '#07244C',
-  orange: '#FAA21B',
 };
 
-const getTheme = currentTheme => {
-  return currentTheme == 'dark' ? darkTheme : lightTheme;
+const getTheme = themeString => {
+  return themeString == 'dark' ? darkTheme : lightTheme;
 };
 
-export default getTheme;
+const getDefaultTheme = () => {
+  const hourNow = new Date().getHours();
+  const defaultTheme = hourNow <= 8 || hourNow >= 20 ? 'dark' : 'light';
+  return getTheme(defaultTheme);
+};
+
+export { getDefaultTheme, getTheme};
