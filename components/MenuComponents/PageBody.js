@@ -7,9 +7,8 @@ import { useTheme, ThemeToggleProvider, ThemeContext } from '../ThemeComponents/
 import { getTheme } from '../ThemeComponents/ThemeColorschemes';
 
 //Temporary file for å teste routing
-const PageBody = ({ children, className, title }) => {
+const PageBody = ({ children, title }) => {
   const themeState = useTheme();
-  console.log(themeState.theme)
   return (
     <ThemeToggleProvider>
       <GlobalStyle theme={getTheme(themeState.theme)} />
