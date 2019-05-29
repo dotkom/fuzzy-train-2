@@ -1,13 +1,31 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+
+  :root {
+    --primary: ${props => props.defaultTheme.primary};
+    --secondary: ${props => props.defaultTheme.secondary};
+    --orange: #FAA21B;
+
+    @media (prefers-color-scheme: dark) {
+      --primary: #07244C;
+      --secondary: #ffffff;
+    }
+
+    @media (prefers-color-scheme: light) {
+      --primary: #ffffff;
+      --secondary: #07244C;
+    }
+  }
+
+
   html,
   body {
     height: 100%;
   }
 
   body {
-    background-color: ${props => props.theme.primary};
+    background-color: var(--primary);
     font-family: 'Source Sans Pro', sans-serif;
     transition-property: background-color;
     transition-duration: 300ms;
