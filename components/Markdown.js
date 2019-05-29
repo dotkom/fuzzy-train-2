@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 const StyledMarkdown = styled.div`
   width: 100%;
   font-size: 14px;
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
 
   & > * + * {
     margin: 15px 0;

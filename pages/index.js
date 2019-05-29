@@ -6,7 +6,7 @@ import { getDefaultTheme } from '../components/ThemeComponents/ThemeColorschemes
 const Index = () => {
   return (
     <>
-      <GlobalStyle defaultTheme={getDefaultTheme()} />
+      <GlobalStyle theme={getDefaultTheme()} />
       <Homepage />
     </>
   );

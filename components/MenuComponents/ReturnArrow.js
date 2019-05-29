@@ -16,11 +16,11 @@ const ReturnArrow = ({ className }) => {
 
 const StyledArrow = styled(ReturnArrow)`
   circle {
-    fill: ${props => props.theme.orange};
+    fill: var(--orange);
   }
   path,
   rect {
-    fill: ${props => props.theme.primary};
+    fill: var(--primary);
   }
 `;
 

@@ -18,6 +18,7 @@ class ThemeToggleProvider extends React.Component {
   componentDidMount() {
     this.state =
       getComputedStyle(document.documentElement).getPropertyValue('--primary') == '#ffffff' ? 'light' : 'dark';
+
   }
 
   render() {
@@ -25,7 +26,7 @@ class ThemeToggleProvider extends React.Component {
       const root = document.documentElement;
       const newMode = mode == 'light' ? 'dark' : 'light';
       const newTheme = getTheme(newMode);
-      //adds "--"" in front of the key because the css variable propertyes start with double dash
+      //adds "--"" in front of the key because the css variable props start with double dash
       for (let k in newTheme) {
         root.style.setProperty('--' + k, newTheme[k]);
       }
@@ -46,4 +47,4 @@ class ThemeToggleProvider extends React.Component {
   }
 }
 
-export { ThemeToggleProvider, useTheme };
+export { ThemeToggleProvider, useTheme, ThemeContext };

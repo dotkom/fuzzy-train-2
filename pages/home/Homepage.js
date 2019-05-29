@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 import PolygonSVG from '../../components/FooterComponents/FooterPolygon.svg';
 import Menu from 'components/MenuComponents/Menu';
 import ThemeToggler from 'components/ThemeComponents/ThemeToggler';
 import LogoSVG from '../../components/MenuComponents/Logo.svg';
-import { ThemeToggleProvider } from '../../components/ThemeComponents/ThemeToggleProvider';
+import { ThemeToggleProvider } from '../../components/ThemeComponents/ThemeContext';
 import StyledCircles from '../../components/ThemeComponents/Circles';
 
 const LowerPolygon = styled(PolygonSVG)`

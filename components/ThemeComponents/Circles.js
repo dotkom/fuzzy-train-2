@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTheme } from './ThemeToggleProvider.js';
+import { useTheme } from './ThemeContext';
 
 const Circles = ({ className }) => {
   const themeState = useTheme()
