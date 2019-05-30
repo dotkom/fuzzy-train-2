@@ -15,7 +15,7 @@ const TextSource = `
 const Profiling = () => {
   return (
     <PageBody title="for bedrifter">
-      <Tabs  />
+      <Tabs />
       <Markdown source={TextSource} />
     </PageBody>
   );

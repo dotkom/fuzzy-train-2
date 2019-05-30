@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import FooterSVG from './Footer.svg';
 import LogoSVG from '../MenuComponents/Logo.svg';
-import { useTheme, ThemeToggleProvider } from '../ThemeComponents/ThemeContext';
+import { useTheme } from '../ThemeComponents/ThemeContext';
 
 const Logo = styled(LogoSVG)`
   width: 40vmin;
@@ -13,7 +12,7 @@ const Logo = styled(LogoSVG)`
 `;
 
 const Container = styled.div`
-display: flex;
+  display: flex;
   width: 100%;
   height: 100%;
   fill: var(--secondary);

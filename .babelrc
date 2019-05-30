@@ -8,9 +8,10 @@
       {
         "ssr": true,
         "displayName": true,
-        "preprocess": false
+        "preprocess": false,
       }
     ],
-    "inline-react-svg"
+    "inline-react-svg",
+    "@babel/plugin-proposal-class-properties"
   ]
 }

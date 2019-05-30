@@ -5,7 +5,6 @@ import Menu from 'components/MenuComponents/Menu';
 import ThemeToggler from 'components/ThemeComponents/ThemeToggler';
 import LogoSVG from '../../components/MenuComponents/Logo.svg';
 import { ThemeToggleProvider } from '../../components/ThemeComponents/ThemeContext';
-import StyledCircles from '../../components/ThemeComponents/Circles';
 
 const LowerPolygon = styled(PolygonSVG)`
   fill: var(--orange);

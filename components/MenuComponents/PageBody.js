@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import GlobalStyle from '../GlobalStyle';
 import Footer from '../FooterComponents/Footer';
 import Title from './Title';
-import { useTheme, ThemeToggleProvider, ThemeContext } from '../ThemeComponents/ThemeContext';
+import { useTheme, ThemeToggleProvider } from '../ThemeComponents/ThemeContext';
 import { getTheme } from '../ThemeComponents/ThemeColorschemes';
 
-//Temporary file for å teste routing
 const PageBody = ({ children, title }) => {
   const themeState = useTheme();
   return (
@@ -14,7 +13,7 @@ const PageBody = ({ children, title }) => {
       <GlobalStyle theme={getTheme(themeState.theme)} />
       <Title text={title} />
       <PageBodyContainer>{children}</PageBodyContainer>
-      <Footer theme={themeState.theme}/>
+      <Footer theme={themeState.theme} />
     </ThemeToggleProvider>
   );
 };

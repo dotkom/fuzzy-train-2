@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getTheme } from './ThemeColorschemes';
 
 const ContextData = {
@@ -12,33 +12,36 @@ const useTheme = () => React.useContext(ThemeContext);
 class ThemeToggleProvider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = '';
+    this.state = {
+      theme: '',
+    };
   }
 
   componentDidMount() {
-    this.state =
-      getComputedStyle(document.documentElement).getPropertyValue('--primary') == '#ffffff' ? 'light' : 'dark';
-
+    this.setState({
+      theme: getComputedStyle(document.documentElement).getPropertyValue('--primary') == '#ffffff' ? 'light' : 'dark',
+    });
   }
 
+  toggleTheme = () => {
+    
+    const root = document.documentElement;
+    const newMode = this.state.theme == 'light' ? 'dark' : 'light';
+    const newTheme = getTheme(newMode);
+    //adds "--"" in front of the key because the css variable props start with double dash
+    for (let k in newTheme) {
+      root.style.setProperty('--' + k, newTheme[k]);
+    }
+
+    this.setState({ theme: newMode });
+  };
+
   render() {
-    const switchTheme = mode => {
-      const root = document.documentElement;
-      const newMode = mode == 'light' ? 'dark' : 'light';
-      const newTheme = getTheme(newMode);
-      //adds "--"" in front of the key because the css variable props start with double dash
-      for (let k in newTheme) {
-        root.style.setProperty('--' + k, newTheme[k]);
-      }
-
-      this.state = newMode;
-    };
-
     return (
       <ThemeContext.Provider
         value={{
           theme: this.state,
-          toggleTheme: () => switchTheme(this.state),
+          toggleTheme: this.toggleTheme,
         }}
       >
         {this.props.children}

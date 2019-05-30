@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Tabs from './Tabs';
 import Info from './info';
 import PageBody from 'components/MenuComponents/PageBody';
@@ -8,7 +8,7 @@ const Companies = () => {
   return (
     <PageBody title="for bedrifter">
       <Tabs />
-      <Info/>
+      <Info />
     </PageBody>
   );
 };

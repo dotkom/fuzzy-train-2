@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import ReturnArrow from './ReturnArrow';
 import Circles from '../ThemeComponents/Circles';
-import { ThemeToggleProvider } from '../ThemeComponents/ThemeContext';
 
 const StyledCircle = styled(Circles)`
   height: 50%;
