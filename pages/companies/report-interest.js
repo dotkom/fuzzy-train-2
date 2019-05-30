@@ -77,8 +77,8 @@ const ReportInterestContainer = ({ className }) => {
         <Label>Huk av det du er interessert i</Label>
         <InfoText>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoText>
         <CheckboxWrapper>
-          {checkboxList.map((el, index) => (
-            <Checkbox name={'Interests'} value={el.text} key={index} title={el.textOnHover} />
+          {checkboxList.map((el) => (
+            <Checkbox name={'Interests'} value={el.text} key={el.text} title={el.textOnHover} />
           ))}
         </CheckboxWrapper>
         <TextArea
