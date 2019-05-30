@@ -32,7 +32,7 @@ const MenuTab = styled(MenuTabContainer)`
   ${props =>
     props.underline &&
     css`
-      border-bottom: ${props.router.pathname == props.link ? `3px solid #faa21b` : '2px solid #c4c4c4'};
+      border-bottom: ${props.router.pathname == props.link ? `3px solid var(--orange)` : '2px solid var(--grey)'};
     `}
 `;
 

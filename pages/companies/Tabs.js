@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Menu from 'components/MenuComponents/Menu';
 
@@ -32,7 +32,7 @@ const TabsContainer = ({ className }) => {
 const Tabs = styled(TabsContainer)`
   display: flex;
   flex-flow: row;
-  margin-bottom: 4rem; 
+  margin-bottom: 4rem;
 
   & > a {
     flex-basis: 100%;

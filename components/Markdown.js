@@ -55,7 +55,7 @@ const StyledMarkdown = styled.div`
   h1 {
     color: #faa21b;
     font-size: 24px;
-    border-bottom: 2px solid #c4c4c4;
+    border-bottom: 2px solid var(--grey);
   }
 
   h2 {

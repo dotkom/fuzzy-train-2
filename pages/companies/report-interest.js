@@ -20,7 +20,7 @@ const CheckboxWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-column-gap: 30px;
-  border: 0.5px solid #c4c4c4;
+  border: 0.5px solid var(--grey);
   padding: 7px;
   border-radius: 10px;
 `;
