@@ -22,7 +22,7 @@ const Title = ({ text, className }) => {
 
 const StyledTitle = styled(Title)`
   text-align: center;
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
 
   h1 {
     font-size: 26px;

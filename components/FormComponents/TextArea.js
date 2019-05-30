@@ -1,13 +1,13 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import React from 'react';
 import Label from './Label';
 
 const TextArea = styled.textarea`
-  background-color: ${props => props.theme.primary};
-  color: ${props => props.theme.secondary};
+  background-color: var(--primary);
+  color: var(--secondary);
   font-size: 16px;
   resize: none;
-  border: 1px solid #c4c4c4;
+  border: 1px solid var(--grey);
   box-sizing: border-box;
   border-radius: 5px;
   padding: 5px;

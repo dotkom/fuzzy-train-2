@@ -1,12 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 import PolygonSVG from '../../components/FooterComponents/FooterPolygon.svg';
 import Menu from 'components/MenuComponents/Menu';
-import ThemeSwitcher from 'components/ThemeComponents/ThemeSwitchers';
+import ThemeToggler from 'components/ThemeComponents/ThemeToggler';
 import LogoSVG from '../../components/MenuComponents/Logo.svg';
+import { ThemeToggleProvider } from '../../components/ThemeComponents/ThemeContext';
 
 const LowerPolygon = styled(PolygonSVG)`
-  fill: ${props => props.theme.orange};
+  fill: var(--orange);
   width: 60vmin;
   position: fixed;
   bottom: 0;
@@ -24,7 +25,7 @@ const Main = styled.div`
 `;
 
 const Logo = styled(LogoSVG)`
-  fill: ${props => props.theme.secondary};
+  fill: var(--secondary);
   stroke: none;
   width: 50vmin;
   margin-bottom: 1.5rem;
@@ -56,17 +57,19 @@ const MainMenu = styled(Menu)`
 
 const Homepage = () => {
   const tabs = [
-    { text: 'Nye Studenter', link: '/StudentPage'},
-    { text: 'Hovedsiden', link: '/'},
-    { text: 'Bedrifter', link: '/companies'},
+    { text: 'Nye Studenter', link: '/StudentPage' },
+    { text: 'Hovedsiden', link: '/' },
+    { text: 'Bedrifter', link: '/companies' },
   ];
 
   return (
     <>
-      <ThemeSwitcher />
+      <ThemeToggleProvider>
+        <ThemeToggler />
+      </ThemeToggleProvider>
       <Main>
         <Logo />
-        <MainMenu tabs={tabs} underline/>
+        <MainMenu tabs={tabs} underline />
       </Main>
       <LowerPolygon />
     </>

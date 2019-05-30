@@ -20,18 +20,18 @@ const CheckboxWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-column-gap: 30px;
-  border: 0.5px solid #c4c4c4;
+  border: 0.5px solid var(--grey);
   padding: 7px;
   border-radius: 10px;
 `;
 
 const SubmitButton = styled.input`
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
   font-size: 25px;
   border-radius: 15px;
   width: 15%;
-  background-color: ${props => props.theme.primary};
-  border-color: ${props => props.theme.secondary};
+  background-color: var(--primary);
+  border-color: var(--secondary);
   padding: 15px;
   align-self: flex-end;
   transition-duration: 250ms;
@@ -42,7 +42,7 @@ const SubmitButton = styled.input`
 `;
 
 const InfoText = styled.p`
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
   font-size: 15px;
 `;
 

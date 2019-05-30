@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTheme } from './ThemeProvider';
+import { useTheme } from './ThemeContext';
 
 const Circles = ({ className }) => {
   const themeState = useTheme();
@@ -14,11 +14,11 @@ const Circles = ({ className }) => {
 
 const StyledCircles = styled(Circles)`
   circle:first-child {
-    fill: ${props => props.theme.secondary};
+    fill: var(--secondary);
   }
 
   circle:last-child {
-    fill: ${props => props.theme.orange};
+    fill: var(--orange);
   }
 `;
 

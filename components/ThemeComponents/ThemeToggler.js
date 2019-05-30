@@ -27,7 +27,7 @@ const ThemeSwitchersContainer = ({ className }) => {
 };
 
 const ThemeSwitcher = styled(ThemeSwitchersContainer)`
-  fill: ${props => props.theme.secondary};
+  fill: var(--secondary);
   transition-property: background-color;
   transition-duration: 300ms;
   width: 100%;

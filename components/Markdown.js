@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 const StyledMarkdown = styled.div`
   width: 100%;
   font-size: 14px;
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
 
   & > * + * {
     margin: 15px 0;
@@ -55,7 +55,7 @@ const StyledMarkdown = styled.div`
   h1 {
     color: #faa21b;
     font-size: 24px;
-    border-bottom: 2px solid #c4c4c4;
+    border-bottom: 2px solid var(--grey);
   }
 
   h2 {

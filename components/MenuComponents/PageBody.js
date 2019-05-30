@@ -1,21 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from '../GlobalStyle';
-import { ThemeProvider, useTheme } from '../ThemeComponents/ThemeProvider';
 import Footer from '../FooterComponents/Footer';
 import Title from './Title';
+import { useTheme, ThemeToggleProvider } from '../ThemeComponents/ThemeContext';
+import { getTheme } from '../ThemeComponents/ThemeColorschemes';
 
-//Temporary file for å teste routing
-const PageBody = ({ children, className, title }) => {
+const PageBody = ({ children, title }) => {
+  const themeState = useTheme();
   return (
-    <>
-      <ThemeProvider className={className}>
-        <GlobalStyle />
-        <Title text={title} />
-        <PageBodyContainer>{children}</PageBodyContainer>
-      </ThemeProvider>
-      <Footer />
-    </>
+    <ThemeToggleProvider>
+      <GlobalStyle theme={getTheme(themeState.theme)} />
+      <Title text={title} />
+      <PageBodyContainer>{children}</PageBodyContainer>
+      <Footer theme={themeState.theme} />
+    </ThemeToggleProvider>
   );
 };
 

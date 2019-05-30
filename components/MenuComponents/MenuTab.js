@@ -19,7 +19,7 @@ const MenuTabContainer = ({ children, router, link, className }) => {
 const MenuTab = styled(MenuTabContainer)`
   text-decoration: none;
   text-align: center;
-  color: ${props => props.theme.secondary};
+  color: var(--secondary);
   opacity: ${props => (props.router.pathname == props.link ? 1 : 0.7)};
   font-weight: 900;
   font-size: 1.5rem;
@@ -32,7 +32,7 @@ const MenuTab = styled(MenuTabContainer)`
   ${props =>
     props.underline &&
     css`
-      border-bottom: ${props.router.pathname == props.link ? `3px solid ${props.theme.orange}` : '2px solid #c4c4c4'};
+      border-bottom: ${props.router.pathname == props.link ? `3px solid var(--orange)` : '2px solid var(--grey)'};
     `}
 `;
 

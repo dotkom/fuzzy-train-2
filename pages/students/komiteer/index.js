@@ -19,7 +19,7 @@ Det er heller ikke uhørt at triKom serverer vafler eller kake.
 const Komiteer = () => {
   return (
     <PageBody title="for studenter">
-      <Tabs  />
+      <Tabs />
       <Markdown source={Source} />
     </PageBody>
   );
