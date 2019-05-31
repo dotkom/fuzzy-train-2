@@ -27,7 +27,6 @@ const Footer = ({ theme }) => {
         <rect x="1920" y="356" width="1920" height="54.9998" transform="rotate(-180 1920 356)" />
         <path d="M1920 301.5L0 301.5L1920 143L1920 301.5Z" />
       </svg>
-      <Logo />
     </Container>
   );
 };

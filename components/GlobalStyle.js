@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
     --secondary: ${props => props.theme.secondary};
     --orange: ${colors.orange};
     --grey: ${colors.grey};
+    --blue: ${colors.blue};
+    --white: ${colors.white};
 
     @media (prefers-color-scheme: dark) {
       --primary: ${darkTheme.primary};

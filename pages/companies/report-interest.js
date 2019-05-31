@@ -1,35 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 import InputField from 'components/FormComponents/InputField';
-import Checkbox from 'components/FormComponents/Checkbox';
+import CheckboxField from 'components/FormComponents/CheckboxField';
 import TextArea from 'components/FormComponents/TextArea';
 import Label from 'components/FormComponents/Label';
 import PageBody from 'components/MenuComponents/PageBody';
 import Tabs from './Tabs';
 import Markdown from 'components/Markdown';
 
-const InputFieldWrapper = styled.div`
+const DualInputFieldWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  margin-bottom: 30px;
 `;
 
-const CheckboxWrapper = styled.div`
+const CheckboxArea = styled.div`
   display: grid;
-  font-size: 28px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-flow: row;
-  grid-column-gap: 30px;
-  border: 0.5px solid var(--grey);
-  padding: 7px;
-  border-radius: 10px;
+  margin-bottom: 50px;
+`;
+
+const CategoryContainer = styled.div`
+  ${Label} + div {
+    margin-top: 30px;
+  }
 `;
 
 const SubmitButton = styled.input`
   color: var(--secondary);
   font-size: 25px;
-  border-radius: 15px;
-  width: 15%;
+  border-radius: 5px;
+  box-sizing: border-box;
   background-color: var(--primary);
   border-color: var(--secondary);
   padding: 15px;
@@ -39,55 +41,59 @@ const SubmitButton = styled.input`
   :hover {
     background-color: gray;
   }
-`;
-
-const InfoText = styled.p`
-  color: var(--secondary);
-  font-size: 15px;
+  :placeholder  {
+    color: var(--grey);
+  }
 `;
 
 const HeaderSource = `
   # Meld interesse:
-  Felt merket med gul stjerne er nødvendige at du fyller ut.
 `;
 
 const ReportInterestContainer = ({ className }) => {
-  const checkboxList = [
-    { text: 'ITEX', textOnHover: 'IT-eksursjonen' },
-    { text: 'Bedriftspresentasjon', textOnHover: 'bedpress' },
-    { text: 'Kurs / faglig arrengement', textOnHover: 'kurs' },
-    { text: 'Annonse i Offline', textOnHover: 'reklame' },
-    { text: 'Artikkel i Offline', textOnHover: 'artikkel' },
-    { text: 'Techtalks', textOnHover: 'Tekniske taler' },
-    { text: 'Lorem Ipsum', textOnHover: 'Ipsum Lorem' },
-    { text: 'Karrieremuligheter', textOnHover: 'Jobb' },
-    { text: 'foobar', textOnHover: 'foo' },
-  ];
+  const currentYear = new Date().getFullYear();
+  const nextYear = currentYear + 1;
 
   return (
     <PageBody title="for bedrifter">
       <Tabs />
       <form className={className} action="POST" id="meldInteresseForm">
         <Markdown source={HeaderSource} />
-        <InputFieldWrapper>
-          <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
+        <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
+        <DualInputFieldWrapper>
           <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
-        </InputFieldWrapper>
-        <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
-        <Label>Huk av det du er interessert i</Label>
-        <InfoText>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoText>
-        <CheckboxWrapper>
-          {checkboxList.map(el => (
-            <Checkbox name={'Interests'} value={el.text} key={el.text} title={el.textOnHover} />
-          ))}
-        </CheckboxWrapper>
+          <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
+        </DualInputFieldWrapper>
+        <CheckboxArea>
+          <CategoryContainer>
+            <Label>Semester</Label>
+            <CheckboxField text={'Høst ' + currentYear} name={'h' + currentYear} id={'h' + currentYear} />
+            <CheckboxField text={'Vår ' + nextYear} name={'v' + nextYear} id={'v' + nextYear} />
+            <CheckboxField text={'Høst ' + nextYear} name={'h' + nextYear} id={'h' + nextYear} />
+          </CategoryContainer>
+          <CategoryContainer>
+            <Label>Arrangementer</Label>
+            <CheckboxField text="IT-ekskursjon (ITEX)" name="itex" id="itex" />
+            <CheckboxField text="Bedriftpresentasjon" name="bedpress" id="bedpress" />
+            <CheckboxField text="Faglig Arrangement/kurs" nane="kurs" id="kurs" />
+            <CheckboxField text="Techtalks" name="techtalk" id="techtalk" />
+            <CheckboxField text="Alternativ Arrangement" name="alternativ" id="alternativ" />
+          </CategoryContainer>
+          <CategoryContainer>
+            <Label>Annet</Label>
+            <CheckboxField text="Annonse i linjeforeningsbladet Offline" name="itex" id="itex" />
+            <CheckboxField text="Samarbeid med andre linjeforeninger" name="bedpress" id="bedpress" />
+            <CheckboxField text="Jobbannonse på nettsiden" nane="kurs" id="kurs" />
+            <CheckboxField text="Profilering for startups" name="itex" id="itex" />
+            <CheckboxField text="Annet (spesifiser i kommentarfeltet)" name="techtalk" id="techtalk" />
+          </CategoryContainer>
+        </CheckboxArea>
         <TextArea
           id="bedriftKommentar"
           name="Kommentarer"
-          placeholder="Utdypning av ønsker og hvordan de tenkes gjennomført..."
-          required
+          placeholder="Legg gjerne ved noen kommentarer om hva du lurer på, slik at vi lettere kan hjelpe deg!"
         />
-        <SubmitButton type="submit" value="Send inn" />
+        <SubmitButton type="submit" value="Meld interesse" />
       </form>
     </PageBody>
   );

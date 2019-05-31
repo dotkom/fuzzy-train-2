@@ -3,17 +3,17 @@ import React from 'react';
 import Label from './Label';
 
 const TextArea = styled.textarea`
-  background-color: var(--primary);
-  color: var(--secondary);
-  font-size: 16px;
+  background-color: var(--white);
+  font-size: 14px;
   resize: none;
-  border: 1px solid var(--grey);
+  border: 2px solid var(--blue);
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 5px;
+  padding: 20px 10px 50px 10px;
   :invalid {
     box-shadow: none;
   }
+  margin-bottom: 30px;
 `;
 
 const TextAreaContainer = props => {

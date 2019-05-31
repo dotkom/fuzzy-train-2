@@ -11,6 +11,13 @@
         "preprocess": false,
       }
     ],
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "test": "./test",
+        "underscore": "lodash"
+      }
+    }],
     "inline-react-svg",
     "@babel/plugin-proposal-class-properties"
   ]

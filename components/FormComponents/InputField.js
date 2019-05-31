@@ -3,18 +3,19 @@ import styled from 'styled-components';
 import Label from './Label';
 
 const Input = styled.input`
-  color: var(--secondary);
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--blue);
   box-sizing: border-box;
   border-radius: 5px;
-  background-color: var(--primary);
+  background-color: var(--white);
   padding: 12px;
+
   ::-webkit-input-placeholder {
     font-size: 24px;
+    padding: 10px;
   }
 `;
 
-const InputField = ({ className, type, name, placeholder, required }) => {
+const InputFieldContainer = ({ className, type, name, placeholder, required }) => {
   return (
     <div className={className}>
       <Label htmlFor={name} isRequired={required}>
@@ -25,10 +26,10 @@ const InputField = ({ className, type, name, placeholder, required }) => {
   );
 };
 
-const StyledInputField = styled(InputField)`
+const InputField = styled(InputFieldContainer)`
   display: flex;
   flex-direction: column;
-  margin: 2px;
+  margin-bottom: 20px;
 `;
 
-export default StyledInputField;
+export default InputField;

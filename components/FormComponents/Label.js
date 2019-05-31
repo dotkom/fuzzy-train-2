@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Label = styled.label`
   font-size: 24px;
+  font-weight: 300;
   margin: 10px 0;
   color: var(--secondary);
   ${props =>
@@ -9,6 +10,7 @@ const Label = styled.label`
     css`
       &:after {
         content: ' *';
+        font-weight: normal;
         color: var(--orange);
       }
     `}
