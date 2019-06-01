@@ -34,7 +34,7 @@ const StyledCheckbox = styled.div`
   ${HiddenCheckbox}:hover+ & {
     ${Icon} {
       visibility: visible;
-      opacity: 0.7;
+      opacity: 0.5;
     }
   }
 `;
