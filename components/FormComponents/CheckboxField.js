@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Checkbox from './Checkbox';
-import Label from './Label';
 
 const CheckboxFieldWrapper = styled.div`
   display: flex;

@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Label from './Label';
 
-// Kokt
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   opacity: 0;
   height: 16px;
