@@ -15,10 +15,11 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const Icon = styled.svg`
   fill: none;
   stroke: var(--orange);
-  stroke-width: 3px;
+  stroke-width: 4px;
+
 `;
 const StyledCheckbox = styled.div`
-  display: inline-block;
+  display: flex;
   width: 16px;
   height: 16px;
   background: var(--white);
@@ -33,7 +34,7 @@ const StyledCheckbox = styled.div`
   ${HiddenCheckbox}:hover+ & {
     ${Icon} {
       visibility: visible;
-      stroke: ${props => (!props.checked ? 'var(--grey)' : '')};
+      opacity: 0.7;
     }
   }
 `;
