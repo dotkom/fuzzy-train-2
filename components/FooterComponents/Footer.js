@@ -14,7 +14,6 @@ const Logo = styled(LogoSVG)`
 `;
 
 const Container = styled.div`
-  display: flex;
   width: 100%;
   height: 100%;
   fill: var(--secondary);
