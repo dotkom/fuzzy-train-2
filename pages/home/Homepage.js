@@ -57,7 +57,7 @@ const MainMenu = styled(Menu)`
 
 const Homepage = () => {
   const tabs = [
-    { text: 'Nye Studenter', link: '/StudentPage' },
+    { text: 'Nye Studenter', link: '/students' },
     { text: 'Hovedsiden', link: '/' },
     { text: 'Bedrifter', link: '/companies' },
   ];
