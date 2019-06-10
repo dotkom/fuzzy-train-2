@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import LogoSVG from '../MenuComponents/Logo.svg';
 import { useTheme } from '../ThemeComponents/ThemeContext';
 
+// Footer needs a good amount of more work 
+
 const Logo = styled(LogoSVG)`
   width: 40vmin;
   fill: var(--primary);

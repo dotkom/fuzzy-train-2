@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import InputField from 'components/FormComponents/InputField';
-import CheckboxField from 'components/FormComponents/CheckboxField';
+import CheckboxArea from 'components/FormComponents/CheckboxArea';
 import TextArea from 'components/FormComponents/TextArea';
 import Label from 'components/FormComponents/Label';
 import PageBody from 'components/MenuComponents/PageBody';
@@ -13,18 +13,6 @@ const DualInputFieldWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 30px;
-`;
-
-const CheckboxArea = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 50px;
-`;
-
-const CategoryContainer = styled.div`
-  ${Label} + div {
-    margin-top: 30px;
-  }
 `;
 
 const SubmitButton = styled.input`
@@ -51,45 +39,54 @@ const HeaderSource = `
 `;
 
 const ReportInterestContainer = ({ className }) => {
-  const currentYear = new Date().getFullYear();
-  const nextYear = currentYear + 1;
+  const [inputs, setInputs] = useState({});
+
+  const handleInputChange = event => {
+    const target = event.target;
+    const value = target.type == 'checkbox' ? target.checked : target.value;
+    setInputs({ ...inputs, [target.name]: value });
+    console.log(inputs);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    alert('Din interesse er nå meldt');
+    // TODO: Find out what to do with the state on submit, maybe reset all fields idk? :))
+  };
 
   return (
     <PageBody title="for bedrifter">
       <Tabs />
-      <form className={className} action="POST" id="meldInteresseForm">
+      <form className={className} onSubmit={handleSubmit}>
         <Markdown source={HeaderSource} />
-        <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
+        <InputField
+          type="text"
+          text="Bedrift"
+          name="company"
+          placeholder="Navn på bedriften..."
+          required
+          onChange={handleInputChange}
+        />
         <DualInputFieldWrapper>
-          <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
-          <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
+          <InputField
+            type="text"
+            text="Kontaktperson"
+            name="contact"
+            placeholder="Navn på kontaktperson..."
+            required
+            onChange={handleInputChange}
+          />
+          <InputField
+            type="email"
+            text="E-post"
+            name="email"
+            placeholder="E-posten det ønskes svar til..."
+            required
+            onChange={handleInputChange}
+          />
         </DualInputFieldWrapper>
-        <CheckboxArea>
-          <CategoryContainer>
-            <Label>Semester</Label>
-            <CheckboxField text={'Høst ' + currentYear} name={'h' + currentYear} id={'h' + currentYear} />
-            <CheckboxField text={'Vår ' + nextYear} name={'v' + nextYear} id={'v' + nextYear} />
-            <CheckboxField text={'Høst ' + nextYear} name={'h' + nextYear} id={'h' + nextYear} />
-          </CategoryContainer>
-          <CategoryContainer>
-            <Label>Arrangementer</Label>
-            <CheckboxField text="IT-ekskursjon (ITEX)" name="itex" id="itex" />
-            <CheckboxField text="Bedriftpresentasjon" name="bedpress" id="bedpress" />
-            <CheckboxField text="Faglig Arrangement/kurs" nane="kurs" id="kurs" />
-            <CheckboxField text="Techtalks" name="techtalk" id="techtalk" />
-            <CheckboxField text="Alternativ Arrangement" name="alternativ" id="alternativ" />
-          </CategoryContainer>
-          <CategoryContainer>
-            <Label>Annet</Label>
-            <CheckboxField text="Annonse i linjeforeningsbladet Offline" name="itex" id="itex" />
-            <CheckboxField text="Samarbeid med andre linjeforeninger" name="bedpress" id="bedpress" />
-            <CheckboxField text="Jobbannonse på nettsiden" nane="kurs" id="kurs" />
-            <CheckboxField text="Profilering for startups" name="itex" id="itex" />
-            <CheckboxField text="Annet (spesifiser i kommentarfeltet)" name="techtalk" id="techtalk" />
-          </CategoryContainer>
-        </CheckboxArea>
+        <CheckboxArea inputs={inputs} handleInputChange={handleInputChange} />
         <TextArea
-          id="bedriftKommentar"
           name="Kommentarer"
           placeholder="Legg gjerne ved noen kommentarer om hva du lurer på, slik at vi lettere kan hjelpe deg!"
         />

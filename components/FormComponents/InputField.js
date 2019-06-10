@@ -15,13 +15,13 @@ const Input = styled.input`
   }
 `;
 
-const InputFieldContainer = ({ className, type, name, placeholder, required }) => {
+const InputFieldContainer = props => {
   return (
-    <div className={className}>
-      <Label htmlFor={name} isRequired={required}>
-        {name}
+    <div className={props.className}>
+      <Label htmlFor={props.name} isRequired={props.required}>
+        {props.text}
       </Label>
-      <Input type={type} name={name} placeholder={placeholder} required={required} />
+      <Input type="text" {...props} />
     </div>
   );
 };

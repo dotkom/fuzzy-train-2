@@ -13,14 +13,10 @@ const CheckboxText = styled.span`
 `;
 
 const CheckboxField = props => {
-  const [checked, setChecked] = React.useState(false);
-
-  const handleCheckboxChange = event => setChecked(event.target.checked);
-
   return (
     <CheckboxFieldWrapper className={props.className}>
       <label htmlFor={props.name}>
-        <Checkbox checked={checked} onChange={handleCheckboxChange} {...props} />
+        <Checkbox checked={props.checked} {...props} />
         <CheckboxText>{props.text}</CheckboxText>
       </label>
     </CheckboxFieldWrapper>
