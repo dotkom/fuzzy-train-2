@@ -16,7 +16,6 @@ const Icon = styled.svg`
   fill: none;
   stroke: var(--orange);
   stroke-width: 4px;
-
 `;
 const StyledCheckbox = styled.div`
   display: flex;
@@ -27,16 +26,21 @@ const StyledCheckbox = styled.div`
   box-sizing: border-box;
   border-radius: 5px;
   transition: all 150ms;
+  &:hover {
+    cursor: pointer;
+  }
 
+ 
   ${Icon} {
     visibility: ${props => (props.checked ? 'visible' : 'hidden')};
   }
-  ${HiddenCheckbox}:hover+ & {
+
+  ${HiddenCheckbox}:hover, ${StyledCheckbox}:hover {
     ${Icon} {
       visibility: visible;
       opacity: 0.5;
     }
-  }
+  } 
 `;
 
 const CheckboxContainer = styled.div`

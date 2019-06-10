@@ -39,10 +39,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #__next {
-    width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
   }
 `;
 
