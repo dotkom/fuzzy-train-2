@@ -1,35 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import InputField from 'components/FormComponents/InputField';
-import Checkbox from 'components/FormComponents/Checkbox';
+import CheckboxArea from 'components/FormComponents/CheckboxArea';
 import TextArea from 'components/FormComponents/TextArea';
 import Label from 'components/FormComponents/Label';
 import PageBody from 'components/MenuComponents/PageBody';
 import Tabs from './Tabs';
 import Markdown from 'components/Markdown';
 
-const InputFieldWrapper = styled.div`
+const DualInputFieldWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-`;
-
-const CheckboxWrapper = styled.div`
-  display: grid;
-  font-size: 28px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-flow: row;
-  grid-column-gap: 30px;
-  border: 0.5px solid var(--grey);
-  padding: 7px;
-  border-radius: 10px;
+  margin-bottom: 30px;
 `;
 
 const SubmitButton = styled.input`
   color: var(--secondary);
   font-size: 25px;
-  border-radius: 15px;
-  width: 15%;
+  border-radius: 5px;
+  box-sizing: border-box;
   background-color: var(--primary);
   border-color: var(--secondary);
   padding: 15px;
@@ -39,55 +29,68 @@ const SubmitButton = styled.input`
   :hover {
     background-color: gray;
   }
-`;
-
-const InfoText = styled.p`
-  color: var(--secondary);
-  font-size: 15px;
+  :placeholder  {
+    color: var(--grey);
+  }
 `;
 
 const HeaderSource = `
   # Meld interesse:
-  Felt merket med gul stjerne er nødvendige at du fyller ut.
 `;
 
 const ReportInterestContainer = ({ className }) => {
-  const checkboxList = [
-    { text: 'ITEX', textOnHover: 'IT-eksursjonen' },
-    { text: 'Bedriftspresentasjon', textOnHover: 'bedpress' },
-    { text: 'Kurs / faglig arrengement', textOnHover: 'kurs' },
-    { text: 'Annonse i Offline', textOnHover: 'reklame' },
-    { text: 'Artikkel i Offline', textOnHover: 'artikkel' },
-    { text: 'Techtalks', textOnHover: 'Tekniske taler' },
-    { text: 'Lorem Ipsum', textOnHover: 'Ipsum Lorem' },
-    { text: 'Karrieremuligheter', textOnHover: 'Jobb' },
-    { text: 'foobar', textOnHover: 'foo' },
-  ];
+  const [inputs, setInputs] = useState({});
+
+  const handleInputChange = event => {
+    const target = event.target;
+    const value = target.type == 'checkbox' ? target.checked : target.value;
+    setInputs({ ...inputs, [target.name]: value });
+    console.log(inputs);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    alert('Din interesse er nå meldt');
+    // TODO: Find out what to do with the state on submit, maybe reset all fields idk? :))
+  };
 
   return (
     <PageBody title="for bedrifter">
       <Tabs />
-      <form className={className} action="POST" id="meldInteresseForm">
+      <form className={className} onSubmit={handleSubmit}>
         <Markdown source={HeaderSource} />
-        <InputFieldWrapper>
-          <InputField type="text" name="Bedrift" placeholder="Navn på bedriften..." required />
-          <InputField type="text" name="Kontaktperson" placeholder="Navn på kontaktperson..." required />
-        </InputFieldWrapper>
-        <InputField type="email" name="E-post" placeholder="E-posten det ønskes svar til..." required />
-        <Label>Huk av det du er interessert i</Label>
-        <InfoText>Du kan holde musepekeren over de forskjellige feltene for mer informasjon</InfoText>
-        <CheckboxWrapper>
-          {checkboxList.map(el => (
-            <Checkbox name={'Interests'} value={el.text} key={el.text} title={el.textOnHover} />
-          ))}
-        </CheckboxWrapper>
-        <TextArea
-          id="bedriftKommentar"
-          name="Kommentarer"
-          placeholder="Utdypning av ønsker og hvordan de tenkes gjennomført..."
+        <InputField
+          type="text"
+          text="Bedrift"
+          name="company"
+          placeholder="Navn på bedriften..."
           required
+          onChange={handleInputChange}
         />
-        <SubmitButton type="submit" value="Send inn" />
+        <DualInputFieldWrapper>
+          <InputField
+            type="text"
+            text="Kontaktperson"
+            name="contact"
+            placeholder="Navn på kontaktperson..."
+            required
+            onChange={handleInputChange}
+          />
+          <InputField
+            type="email"
+            text="E-post"
+            name="email"
+            placeholder="E-posten det ønskes svar til..."
+            required
+            onChange={handleInputChange}
+          />
+        </DualInputFieldWrapper>
+        <CheckboxArea inputs={inputs} handleInputChange={handleInputChange} />
+        <TextArea
+          name="Kommentarer"
+          placeholder="Legg gjerne ved noen kommentarer om hva du lurer på, slik at vi lettere kan hjelpe deg!"
+        />
+        <SubmitButton type="submit" value="Meld interesse" />
       </form>
     </PageBody>
   );

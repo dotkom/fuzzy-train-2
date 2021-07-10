@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import LogoSVG from '../MenuComponents/Logo.svg';
 import { useTheme } from '../ThemeComponents/ThemeContext';
 
+// Footer needs a good amount of more work 
+
 const Logo = styled(LogoSVG)`
   width: 40vmin;
   fill: var(--primary);
@@ -12,7 +14,6 @@ const Logo = styled(LogoSVG)`
 `;
 
 const Container = styled.div`
-  display: flex;
   width: 100%;
   height: 100%;
   fill: var(--secondary);
@@ -27,7 +28,6 @@ const Footer = ({ theme }) => {
         <rect x="1920" y="356" width="1920" height="54.9998" transform="rotate(-180 1920 356)" />
         <path d="M1920 301.5L0 301.5L1920 143L1920 301.5Z" />
       </svg>
-      <Logo />
     </Container>
   );
 };

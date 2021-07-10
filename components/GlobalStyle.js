@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
     --secondary: ${props => props.theme.secondary};
     --orange: ${colors.orange};
     --grey: ${colors.grey};
+    --blue: ${colors.blue};
+    --white: ${colors.white};
 
     @media (prefers-color-scheme: dark) {
       --primary: ${darkTheme.primary};
@@ -37,10 +39,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #__next {
-    width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
   }
 `;
 
